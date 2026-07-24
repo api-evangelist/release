@@ -1,0 +1,324 @@
+openapi: 3.0.3
+info:
+  title: Release.com Platform Accounts Builds API
+  version: 1.0.0
+  description: 'The Release.com Platform API provides REST endpoints for managing
+
+    ephemeral environments, deployments, builds, clusters, and related
+
+    infrastructure.
+
+
+    **V1 scope:** Platform endpoints only. AI sandbox endpoints (`/ai/**`)
+
+    are excluded from this version and will be added in a future iteration.
+
+    '
+  contact:
+    name: Release.com
+    url: https://release.com
+  x-logo:
+    url: https://api.release.com/release-logo.png
+    backgroundColor: '#FFFFFF'
+    altText: Release
+servers:
+- url: https://api.release.com
+  description: Production
+security:
+- userEmail: []
+  userToken: []
+tags:
+- name: Builds
+paths:
+  /apps/{app_id}/builds/{id}/log:
+    get:
+      tags:
+      - Builds
+      summary: Log Build
+      operationId: builds_log
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: app_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: App ID (integer or hashid)
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Resource ID (integer or hashid)
+  /apps/{app_id}/builds/{id}/rebuild:
+    post:
+      tags:
+      - Builds
+      summary: Rebuild
+      operationId: builds_rebuild
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Build'
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: app_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: App ID (integer or hashid)
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Resource ID (integer or hashid)
+  /apps/{app_id}/builds/{id}/cancel:
+    put:
+      tags:
+      - Builds
+      summary: Cancel build
+      operationId: builds_cancel
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: app_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: App ID (integer or hashid)
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Resource ID (integer or hashid)
+  /apps/{app_id}/builds:
+    get:
+      tags:
+      - Builds
+      summary: List Builds
+      operationId: builds_index
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BuildIndex'
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: app_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: App ID (integer or hashid)
+      - name: page
+        in: query
+        schema:
+          type: integer
+          default: 1
+        description: Page number
+      - name: per_page
+        in: query
+        schema:
+          type: integer
+          default: 25
+        description: Items per page
+      - name: branch
+        in: query
+        schema:
+          type: string
+        description: Filter by branch
+      - name: tag
+        in: query
+        schema:
+          type: string
+        description: Filter by tag
+    post:
+      tags:
+      - Builds
+      summary: Create Build
+      operationId: builds_create
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: app_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: App ID (integer or hashid)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+  /apps/{app_id}/builds/{id}:
+    get:
+      tags:
+      - Builds
+      summary: Get Build
+      operationId: builds_show
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Build'
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: app_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: App ID (integer or hashid)
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Resource ID (integer or hashid)
+components:
+  schemas:
+    Build:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        branch:
+          type: string
+        tag:
+          type: string
+        aasm_state:
+          type: string
+        message:
+          type: string
+        created_at:
+          type: string
+        started_at:
+          type: string
+        total_duration:
+          type: number
+        commit_long:
+          type: string
+        commit_short:
+          type: string
+        commit_date:
+          type: string
+        commit_message:
+          type: string
+        commit_user:
+          type: string
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+        message:
+          type: string
+        errors:
+          type: array
+          items:
+            type: string
+    BuildIndex:
+      type: object
+      properties:
+        total_count:
+          type: integer
+        current_page:
+          type: integer
+        per_page:
+          type: integer
+        total_pages:
+          type: integer
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Build'
+  securitySchemes:
+    userEmail:
+      type: apiKey
+      in: header
+      name: X-User-Email
+      description: User's email address for authentication
+    userToken:
+      type: apiKey
+      in: header
+      name: X-User-Token
+      description: User's authentication token (from ~/.release.yaml)
+externalDocs:
+  description: Release Documentation
+  url: https://docs.release.com

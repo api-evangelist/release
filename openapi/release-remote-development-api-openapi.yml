@@ -1,0 +1,195 @@
+openapi: 3.0.3
+info:
+  title: Release.com Platform Accounts Remote Development API
+  version: 1.0.0
+  description: 'The Release.com Platform API provides REST endpoints for managing
+
+    ephemeral environments, deployments, builds, clusters, and related
+
+    infrastructure.
+
+
+    **V1 scope:** Platform endpoints only. AI sandbox endpoints (`/ai/**`)
+
+    are excluded from this version and will be added in a future iteration.
+
+    '
+  contact:
+    name: Release.com
+    url: https://release.com
+  x-logo:
+    url: https://api.release.com/release-logo.png
+    backgroundColor: '#FFFFFF'
+    altText: Release
+servers:
+- url: https://api.release.com
+  description: Production
+security:
+- userEmail: []
+  userToken: []
+tags:
+- name: Remote Development
+paths:
+  /apps/{app_id}/spaces/{space_id}/remote_development/kubeconfig:
+    get:
+      tags:
+      - Remote Development
+      summary: Download kubeconfig
+      operationId: remote_developments_kubeconfig
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: app_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: App ID (integer or hashid)
+      - name: space_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Environment ID (integer or hashid)
+  /apps/{app_id}/spaces/{space_id}/remote_development:
+    get:
+      tags:
+      - Remote Development
+      summary: Get Remote development
+      operationId: remote_developments_show
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: app_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: App ID (integer or hashid)
+      - name: space_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Environment ID (integer or hashid)
+    delete:
+      tags:
+      - Remote Development
+      summary: Delete Remote development
+      operationId: remote_developments_destroy
+      responses:
+        '200':
+          description: Deleted
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: app_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: App ID (integer or hashid)
+      - name: space_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Environment ID (integer or hashid)
+    post:
+      tags:
+      - Remote Development
+      summary: Create Remote development
+      operationId: remote_developments_create
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: app_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: App ID (integer or hashid)
+      - name: space_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Environment ID (integer or hashid)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+components:
+  schemas:
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+        message:
+          type: string
+        errors:
+          type: array
+          items:
+            type: string
+  securitySchemes:
+    userEmail:
+      type: apiKey
+      in: header
+      name: X-User-Email
+      description: User's email address for authentication
+    userToken:
+      type: apiKey
+      in: header
+      name: X-User-Token
+      description: User's authentication token (from ~/.release.yaml)
+externalDocs:
+  description: Release Documentation
+  url: https://docs.release.com

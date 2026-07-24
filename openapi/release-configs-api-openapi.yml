@@ -1,0 +1,416 @@
+openapi: 3.0.3
+info:
+  title: Release.com Platform Accounts Configs API
+  version: 1.0.0
+  description: 'The Release.com Platform API provides REST endpoints for managing
+
+    ephemeral environments, deployments, builds, clusters, and related
+
+    infrastructure.
+
+
+    **V1 scope:** Platform endpoints only. AI sandbox endpoints (`/ai/**`)
+
+    are excluded from this version and will be added in a future iteration.
+
+    '
+  contact:
+    name: Release.com
+    url: https://release.com
+  x-logo:
+    url: https://api.release.com/release-logo.png
+    backgroundColor: '#FFFFFF'
+    altText: Release
+servers:
+- url: https://api.release.com
+  description: Production
+security:
+- userEmail: []
+  userToken: []
+tags:
+- name: Configs
+paths:
+  /configs/validate:
+    post:
+      tags:
+      - Configs
+      summary: Validate Config
+      operationId: configs_validate
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /apps/{app_id}/spaces/{space_id}/serialized_configs:
+    get:
+      tags:
+      - Configs
+      summary: List Serialized configs
+      operationId: serialized_configs_index
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: app_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: App ID (integer or hashid)
+      - name: space_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Environment ID (integer or hashid)
+    post:
+      tags:
+      - Configs
+      summary: Create Serialized config
+      operationId: serialized_configs_create
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: app_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: App ID (integer or hashid)
+      - name: space_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Environment ID (integer or hashid)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+  /apps/{app_id}/spaces/{space_id}/serialized_configs/{id}:
+    get:
+      tags:
+      - Configs
+      summary: Get Serialized config
+      operationId: serialized_configs_show
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: app_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: App ID (integer or hashid)
+      - name: space_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Environment ID (integer or hashid)
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Resource ID (integer or hashid)
+  /apps/{app_id}/spaces/{space_id}/latest_config:
+    get:
+      tags:
+      - Configs
+      summary: Get latest app config
+      operationId: serialized_configs_latest_config
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: app_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: App ID (integer or hashid)
+      - name: space_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Environment ID (integer or hashid)
+  /apps/{app_id}/spaces/{space_id}/latest_env_config:
+    get:
+      tags:
+      - Configs
+      summary: Get latest env config
+      operationId: serialized_configs_latest_env_config
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: app_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: App ID (integer or hashid)
+      - name: space_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Environment ID (integer or hashid)
+  /apps/{app_id}/serialized_configs:
+    get:
+      tags:
+      - Configs
+      summary: List Serialized configs
+      operationId: serialized_configs_get_index
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: app_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: App ID (integer or hashid)
+    post:
+      tags:
+      - Configs
+      summary: Create Serialized config
+      operationId: serialized_configs_post_create
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: app_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: App ID (integer or hashid)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+  /apps/{app_id}/serialized_configs/{id}:
+    get:
+      tags:
+      - Configs
+      summary: Get Serialized config
+      operationId: serialized_configs_get_show
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: app_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: App ID (integer or hashid)
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Resource ID (integer or hashid)
+  /apps/{app_id}/latest_config:
+    get:
+      tags:
+      - Configs
+      summary: Get latest app config
+      operationId: serialized_configs_get_latest_config
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: app_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: App ID (integer or hashid)
+  /apps/{app_id}/latest_env_config:
+    get:
+      tags:
+      - Configs
+      summary: Get latest env config
+      operationId: serialized_configs_get_latest_env_config
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: app_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: App ID (integer or hashid)
+components:
+  schemas:
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+        message:
+          type: string
+        errors:
+          type: array
+          items:
+            type: string
+  securitySchemes:
+    userEmail:
+      type: apiKey
+      in: header
+      name: X-User-Email
+      description: User's email address for authentication
+    userToken:
+      type: apiKey
+      in: header
+      name: X-User-Token
+      description: User's authentication token (from ~/.release.yaml)
+externalDocs:
+  description: Release Documentation
+  url: https://docs.release.com

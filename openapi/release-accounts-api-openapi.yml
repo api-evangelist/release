@@ -1,0 +1,542 @@
+openapi: 3.0.3
+info:
+  title: Release.com Platform Accounts API
+  version: 1.0.0
+  description: 'The Release.com Platform API provides REST endpoints for managing
+
+    ephemeral environments, deployments, builds, clusters, and related
+
+    infrastructure.
+
+
+    **V1 scope:** Platform endpoints only. AI sandbox endpoints (`/ai/**`)
+
+    are excluded from this version and will be added in a future iteration.
+
+    '
+  contact:
+    name: Release.com
+    url: https://release.com
+  x-logo:
+    url: https://api.release.com/release-logo.png
+    backgroundColor: '#FFFFFF'
+    altText: Release
+servers:
+- url: https://api.release.com
+  description: Production
+security:
+- userEmail: []
+  userToken: []
+tags:
+- name: Accounts
+paths:
+  /accounts/{account_id}/settings:
+    post:
+      tags:
+      - Accounts
+      summary: Create or update Account
+      operationId: settings_accounts_create_or_update
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: account_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Account ID (integer or hashid)
+    get:
+      tags:
+      - Accounts
+      summary: List Accounts
+      operationId: settings_accounts_index
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Account'
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: account_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Account ID (integer or hashid)
+  /accounts/{account_id}/settings/delete_all:
+    delete:
+      tags:
+      - Accounts
+      summary: Delete all Account
+      operationId: settings_accounts_delete_all
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: account_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Account ID (integer or hashid)
+  /accounts/validate:
+    post:
+      tags:
+      - Accounts
+      summary: Validate Account
+      operationId: accounts_validate
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /accounts/{id}/avatar:
+    post:
+      tags:
+      - Accounts
+      summary: Avatar Account
+      operationId: accounts_avatar
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Resource ID (integer or hashid)
+  /accounts/{id}/resources:
+    get:
+      tags:
+      - Accounts
+      summary: Resources Account
+      operationId: accounts_resources
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Resource ID (integer or hashid)
+  /accounts/{id}/invite_users:
+    put:
+      tags:
+      - Accounts
+      summary: Invite users Account
+      operationId: accounts_invite_users
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Resource ID (integer or hashid)
+  /accounts:
+    get:
+      tags:
+      - Accounts
+      summary: List Accounts
+      operationId: accounts_index
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Account'
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters: []
+    post:
+      tags:
+      - Accounts
+      summary: Create Account
+      operationId: accounts_create
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+  /accounts/new:
+    get:
+      tags:
+      - Accounts
+      summary: New Account
+      operationId: accounts_new
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /accounts/{id}/edit:
+    get:
+      tags:
+      - Accounts
+      summary: Edit Account
+      operationId: accounts_edit
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Resource ID (integer or hashid)
+  /accounts/{id}:
+    get:
+      tags:
+      - Accounts
+      summary: Get Account
+      operationId: accounts_show
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Resource ID (integer or hashid)
+    patch:
+      tags:
+      - Accounts
+      summary: Update Account
+      operationId: accounts_update
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Resource ID (integer or hashid)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+    put:
+      tags:
+      - Accounts
+      summary: Update Account
+      operationId: accounts_put_update
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Resource ID (integer or hashid)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+    delete:
+      tags:
+      - Accounts
+      summary: Delete Account
+      operationId: accounts_destroy
+      responses:
+        '200':
+          description: Deleted
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Resource ID (integer or hashid)
+  /:
+    get:
+      tags:
+      - Accounts
+      summary: List Accounts
+      operationId: admin_accounts_index
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Account'
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters: []
+components:
+  schemas:
+    Account:
+      type: object
+      properties:
+        id:
+          type: integer
+        hashid:
+          type: string
+        name:
+          type: string
+        domain:
+          type: string
+        address:
+          type: string
+        avatar_url:
+          type: string
+        onboarded:
+          type: boolean
+        release_domains:
+          type: array
+          items:
+            type: object
+        plan:
+          type: string
+        on_premise_enabled:
+          type: boolean
+        account_id:
+          type: integer
+        email:
+          type: string
+        owner:
+          type: boolean
+        allow_cluster_add:
+          type: boolean
+        credit_card_required:
+          type: boolean
+        payment_valid:
+          type: boolean
+        datadog_api_key:
+          type: string
+        datadog_site:
+          type: string
+        user_count:
+          type: integer
+        owner_email:
+          type: string
+        owner_deactivated:
+          type: string
+        gitops_enabled:
+          type: string
+        role:
+          type: string
+        flags:
+          type: string
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+        message:
+          type: string
+        errors:
+          type: array
+          items:
+            type: string
+  securitySchemes:
+    userEmail:
+      type: apiKey
+      in: header
+      name: X-User-Email
+      description: User's email address for authentication
+    userToken:
+      type: apiKey
+      in: header
+      name: X-User-Token
+      description: User's authentication token (from ~/.release.yaml)
+externalDocs:
+  description: Release Documentation
+  url: https://docs.release.com

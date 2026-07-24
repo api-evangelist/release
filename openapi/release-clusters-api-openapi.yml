@@ -1,0 +1,529 @@
+openapi: 3.0.3
+info:
+  title: Release.com Platform Accounts Clusters API
+  version: 1.0.0
+  description: 'The Release.com Platform API provides REST endpoints for managing
+
+    ephemeral environments, deployments, builds, clusters, and related
+
+    infrastructure.
+
+
+    **V1 scope:** Platform endpoints only. AI sandbox endpoints (`/ai/**`)
+
+    are excluded from this version and will be added in a future iteration.
+
+    '
+  contact:
+    name: Release.com
+    url: https://release.com
+  x-logo:
+    url: https://api.release.com/release-logo.png
+    backgroundColor: '#FFFFFF'
+    altText: Release
+servers:
+- url: https://api.release.com
+  description: Production
+security:
+- userEmail: []
+  userToken: []
+tags:
+- name: Clusters
+paths:
+  /accounts/{account_id}/clusters/{id}/kubeconfig:
+    get:
+      tags:
+      - Clusters
+      summary: Download kubeconfig
+      operationId: clusters_kubeconfig
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: account_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Account ID (integer or hashid)
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Resource ID (integer or hashid)
+  /accounts/{account_id}/clusters/{id}/database_snapshots:
+    get:
+      tags:
+      - Clusters
+      summary: List database snapshots
+      operationId: clusters_database_snapshots
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: account_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Account ID (integer or hashid)
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Resource ID (integer or hashid)
+  /accounts/{account_id}/clusters/{id}/verify:
+    get:
+      tags:
+      - Clusters
+      summary: Verify cluster
+      operationId: clusters_verify
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: account_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Account ID (integer or hashid)
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Resource ID (integer or hashid)
+  /accounts/{account_id}/clusters/{id}/certificate:
+    post:
+      tags:
+      - Clusters
+      summary: Generate cluster certificate
+      operationId: clusters_certificate
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: account_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Account ID (integer or hashid)
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Resource ID (integer or hashid)
+  /accounts/{account_id}/clusters/{id}/upgrade:
+    post:
+      tags:
+      - Clusters
+      summary: Upgrade cluster
+      operationId: clusters_upgrade
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: account_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Account ID (integer or hashid)
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Resource ID (integer or hashid)
+  /accounts/{account_id}/clusters/{id}/patch_refresh_node_groups:
+    patch:
+      tags:
+      - Clusters
+      summary: Patch refresh node groups Cluster
+      operationId: clusters_patch_refresh_node_groups
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: account_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Account ID (integer or hashid)
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Resource ID (integer or hashid)
+  /accounts/{account_id}/clusters:
+    get:
+      tags:
+      - Clusters
+      summary: List Clusters
+      operationId: clusters_index
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: account_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Account ID (integer or hashid)
+    post:
+      tags:
+      - Clusters
+      summary: Create Cluster
+      operationId: clusters_create
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: account_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Account ID (integer or hashid)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+  /accounts/{account_id}/clusters/new:
+    get:
+      tags:
+      - Clusters
+      summary: New Cluster
+      operationId: clusters_new
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: account_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Account ID (integer or hashid)
+  /accounts/{account_id}/clusters/{id}/edit:
+    get:
+      tags:
+      - Clusters
+      summary: Edit Cluster
+      operationId: clusters_edit
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: account_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Account ID (integer or hashid)
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Resource ID (integer or hashid)
+  /accounts/{account_id}/clusters/{id}:
+    get:
+      tags:
+      - Clusters
+      summary: Get Cluster
+      operationId: clusters_show
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: account_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Account ID (integer or hashid)
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Resource ID (integer or hashid)
+    patch:
+      tags:
+      - Clusters
+      summary: Update Cluster
+      operationId: clusters_update
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: account_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Account ID (integer or hashid)
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Resource ID (integer or hashid)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+    put:
+      tags:
+      - Clusters
+      summary: Update Cluster
+      operationId: clusters_put_update
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: account_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Account ID (integer or hashid)
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Resource ID (integer or hashid)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+    delete:
+      tags:
+      - Clusters
+      summary: Delete Cluster
+      operationId: clusters_destroy
+      responses:
+        '200':
+          description: Deleted
+        '401':
+          description: Unauthorized — missing or invalid credentials
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      parameters:
+      - name: account_id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Account ID (integer or hashid)
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Resource ID (integer or hashid)
+components:
+  schemas:
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+        message:
+          type: string
+        errors:
+          type: array
+          items:
+            type: string
+  securitySchemes:
+    userEmail:
+      type: apiKey
+      in: header
+      name: X-User-Email
+      description: User's email address for authentication
+    userToken:
+      type: apiKey
+      in: header
+      name: X-User-Token
+      description: User's authentication token (from ~/.release.yaml)
+externalDocs:
+  description: Release Documentation
+  url: https://docs.release.com
