@@ -1,0 +1,21 @@
+generated: '2026-07-21'
+method: generated
+source: openapi/release-openapi-original.json
+notes: >-
+  Packaged Agent Skills for the Release.com Platform API. Every step is grounded in a
+  real operationId present in openapi/release-openapi-original.json. Auth is via
+  X-User-Email + X-User-Token headers (see authentication/release-authentication.yml);
+  conventions in conventions/release-conventions.yml; errors in errors/release-problem-types.yml.
+skills:
+  - file: release-create-environment.md
+    name: Create an app and spin up an ephemeral environment
+    api: openapi/release-openapi-original.json
+    operations: [apps_create, spaces_create, pipelines_create, spaces_show, instances_index]
+  - file: release-manage-environment-lifecycle.md
+    name: Pause, resume, extend, and tear down an environment
+    api: openapi/release-openapi-original.json
+    operations: [spaces_index, spaces_pause, spaces_resume, spaces_extend_expiration, spaces_destroy]
+  - file: release-build-and-deploy.md
+    name: Trigger a build and monitor a deploy
+    api: openapi/release-openapi-original.json
+    operations: [builds_create, builds_show, builds_log, pipelines_create, pipelines_show]

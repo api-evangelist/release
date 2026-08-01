@@ -1,27 +1,264 @@
 aid: release
 name: Release
-description: 'Release is a company surfaced as a portfolio company of crv and added to the API Evangelist
-  network as a stub for enrichment. Sector: developer-tools. This profile is a lead awaiting the enrichment
-  pipeline.'
+description: Release is a developer-tools platform that provisions on-demand, full-stack ephemeral environments
+  inside your own AWS or GCP cloud accounts. Positioned as a Heroku replacement and a Vercel alternative
+  for full-stack apps, Release turns a repository plus a .release.yaml (or Docker Compose) file into reproducible
+  environments spun up per pull request, per branch, or on demand, with managed Kubernetes clusters, datasets,
+  remote development, and a Release.ai AI sandbox. Teams automate it through a REST Platform API (accounts,
+  apps, environments, deploys, clusters, builds), a GraphQL API, an AI Sandbox API, and a first-party
+  CLI, all authenticated with X-User-Email and X-User-Token headers and described by a canonical OpenAPI
+  contract at https://api.release.com/openapi.json.
 url: https://raw.githubusercontent.com/api-evangelist/release/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - crv
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: enriched
+x-tier-reason: real-api-surface
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
 - Developer Tools
-apis: []
+- Ephemeral Environments
+- Platform Engineering
+- Deployment
+- Kubernetes
+- Environments as a Service
+- DevOps
+- CI/CD
+- AI Sandbox
+apis:
+- aid: release:release-accounts-api
+  name: Release Accounts API
+  description: The Accounts API from Release — 11 operation(s) for accounts.
+  humanURL: https://docs.release.com/reference-documentation/release-api.md
+  baseURL: https://api.release.com
+  tags:
+  - Accounts
+  properties:
+  - type: OpenAPI
+    url: openapi/release-accounts-api-openapi.yml
+  - type: Documentation
+    url: https://docs.release.com/reference-documentation/release-api.md
+  - type: APIReference
+    url: https://docs.release.com/reference-documentation/release-api/platform-api.md
+  - type: GraphQL
+    url: https://docs.release.com/reference-documentation/release-api/graphql-api.md
+- aid: release:release-apps-api
+  name: Release Apps API
+  description: The Apps API from Release — 8 operation(s) for apps.
+  humanURL: https://docs.release.com/reference-documentation/release-api.md
+  baseURL: https://api.release.com
+  tags:
+  - Apps
+  properties:
+  - type: OpenAPI
+    url: openapi/release-apps-api-openapi.yml
+  - type: Documentation
+    url: https://docs.release.com/reference-documentation/release-api.md
+  - type: APIReference
+    url: https://docs.release.com/reference-documentation/release-api/platform-api.md
+  - type: GraphQL
+    url: https://docs.release.com/reference-documentation/release-api/graphql-api.md
+- aid: release:release-builds-api
+  name: Release Builds API
+  description: The Builds API from Release — 5 operation(s) for builds.
+  humanURL: https://docs.release.com/reference-documentation/release-api.md
+  baseURL: https://api.release.com
+  tags:
+  - Builds
+  properties:
+  - type: OpenAPI
+    url: openapi/release-builds-api-openapi.yml
+  - type: Documentation
+    url: https://docs.release.com/reference-documentation/release-api.md
+  - type: APIReference
+    url: https://docs.release.com/reference-documentation/release-api/platform-api.md
+  - type: GraphQL
+    url: https://docs.release.com/reference-documentation/release-api/graphql-api.md
+- aid: release:release-clusters-api
+  name: Release Clusters API
+  description: The Clusters API from Release — 10 operation(s) for clusters.
+  humanURL: https://docs.release.com/reference-documentation/release-api.md
+  baseURL: https://api.release.com
+  tags:
+  - Clusters
+  properties:
+  - type: OpenAPI
+    url: openapi/release-clusters-api-openapi.yml
+  - type: Documentation
+    url: https://docs.release.com/reference-documentation/release-api.md
+  - type: APIReference
+    url: https://docs.release.com/reference-documentation/release-api/platform-api.md
+  - type: GraphQL
+    url: https://docs.release.com/reference-documentation/release-api/graphql-api.md
+- aid: release:release-configs-api
+  name: Release Configs API
+  description: The Configs API from Release — 9 operation(s) for configs.
+  humanURL: https://docs.release.com/reference-documentation/release-api.md
+  baseURL: https://api.release.com
+  tags:
+  - Configs
+  properties:
+  - type: OpenAPI
+    url: openapi/release-configs-api-openapi.yml
+  - type: Documentation
+    url: https://docs.release.com/reference-documentation/release-api.md
+  - type: APIReference
+    url: https://docs.release.com/reference-documentation/release-api/platform-api.md
+  - type: GraphQL
+    url: https://docs.release.com/reference-documentation/release-api/graphql-api.md
+- aid: release:release-deploys-api
+  name: Release Deploys API
+  description: The Deploys API from Release — 5 operation(s) for deploys.
+  humanURL: https://docs.release.com/reference-documentation/release-api.md
+  baseURL: https://api.release.com
+  tags:
+  - Deploys
+  properties:
+  - type: OpenAPI
+    url: openapi/release-deploys-api-openapi.yml
+  - type: Documentation
+    url: https://docs.release.com/reference-documentation/release-api.md
+  - type: APIReference
+    url: https://docs.release.com/reference-documentation/release-api/platform-api.md
+  - type: GraphQL
+    url: https://docs.release.com/reference-documentation/release-api/graphql-api.md
+- aid: release:release-environments-api
+  name: Release Environments API
+  description: The Environments API from Release — 6 operation(s) for environments.
+  humanURL: https://docs.release.com/reference-documentation/release-api.md
+  baseURL: https://api.release.com
+  tags:
+  - Environments
+  properties:
+  - type: OpenAPI
+    url: openapi/release-environments-api-openapi.yml
+  - type: Documentation
+    url: https://docs.release.com/reference-documentation/release-api.md
+  - type: APIReference
+    url: https://docs.release.com/reference-documentation/release-api/platform-api.md
+  - type: GraphQL
+    url: https://docs.release.com/reference-documentation/release-api/graphql-api.md
+- aid: release:release-instances-api
+  name: Release Instances API
+  description: The Instances API from Release — 2 operation(s) for instances.
+  humanURL: https://docs.release.com/reference-documentation/release-api.md
+  baseURL: https://api.release.com
+  tags:
+  - Instances
+  properties:
+  - type: OpenAPI
+    url: openapi/release-instances-api-openapi.yml
+  - type: Documentation
+    url: https://docs.release.com/reference-documentation/release-api.md
+  - type: APIReference
+    url: https://docs.release.com/reference-documentation/release-api/platform-api.md
+  - type: GraphQL
+    url: https://docs.release.com/reference-documentation/release-api/graphql-api.md
+- aid: release:release-remote-development-api
+  name: Release Remote Development API
+  description: The Remote Development API from Release — 2 operation(s) for remote development.
+  humanURL: https://docs.release.com/reference-documentation/release-api.md
+  baseURL: https://api.release.com
+  tags:
+  - Remote Development
+  properties:
+  - type: OpenAPI
+    url: openapi/release-remote-development-api-openapi.yml
+  - type: Documentation
+    url: https://docs.release.com/reference-documentation/release-api.md
+  - type: APIReference
+    url: https://docs.release.com/reference-documentation/release-api/platform-api.md
+  - type: GraphQL
+    url: https://docs.release.com/reference-documentation/release-api/graphql-api.md
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: TrustCenter
+  url: security/release-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/release-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/release-domain-security.yml
+- type: AgenticAccess
+  url: agentic-access/release-agentic-access.yml
+- type: Authentication
+  url: authentication/release-authentication.yml
 - type: Website
   url: https://release.com/
+- type: DeveloperPortal
+  url: https://docs.release.com/
+- type: Documentation
+  url: https://docs.release.com/
+- type: APIReference
+  url: https://docs.release.com/reference-documentation/release-api.md
+- type: GettingStarted
+  url: https://docs.release.com/getting-started/quickstart.md
+- type: Support
+  url: mailto:hello@release.com
+- type: Blog
+  url: https://release.com/blog
+- type: GitHubOrganization
+  url: https://github.com/releasehub-com
+- type: Pricing
+  url: https://release.com/pricing
+- type: Login
+  url: https://web.release.com/
+- type: TermsOfService
+  url: https://release.com/legal/terms-of-service
+- type: PrivacyPolicy
+  url: https://release.com/legal/privacy-policy
+- type: StatusPage
+  url: https://status.release.com/
+- type: Security
+  url: https://release.com/legal/security
+- type: Compliance
+  url: https://release.com/legal/security
+- type: LLMsTxt
+  url: llms/release-llms.txt
+- type: Packages
+  url: packages/release-packages.yml
+- type: CLI
+  url: cli/release-cli.yml
+- type: MCPServer
+  url: mcp/release-mcp.yml
+- type: WellKnown
+  url: well-known/release-well-known.yml
+- type: Conformance
+  url: conformance/release-conformance.yml
+- type: ErrorCatalog
+  url: errors/release-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/release-lifecycle.yml
+- type: Deprecation
+  url: https://docs.release.com/reference-documentation/release-api/environments-api.md
+- type: Conventions
+  url: conventions/release-conventions.yml
+- type: DataModel
+  url: data-model/release-data-model.yml
+- type: AgentSkill
+  url: skills/_index.yml
+image: https://release.com/og/og-image.png
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 16
+  pass: local-v1

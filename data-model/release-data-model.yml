@@ -1,0 +1,165 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/release-openapi-original.json
+id_format: Hashid strings (integer or hashid accepted on path params)
+notes: Entity graph derived from OpenAPI components.schemas and the nested path structure (/accounts ->
+  /clusters, /apps -> /spaces|/builds|/pipelines, /spaces -> /instances). "Space" is the API name for
+  an environment.
+entities:
+- name: Error
+  fields:
+  - error
+  - message
+  - errors
+- name: Account
+  fields:
+  - id
+  - hashid
+  - name
+  - domain
+  - address
+  - avatar_url
+  - onboarded
+  - release_domains
+  - plan
+  - on_premise_enabled
+  - account_id
+  - email
+  - owner
+  - allow_cluster_add
+  - credit_card_required
+  - payment_valid
+  - datadog_api_key
+  - datadog_site
+  - user_count
+  - owner_email
+  - owner_deactivated
+  - gitops_enabled
+  - role
+  - flags
+- name: App
+  fields:
+  - id
+  - name
+  - default_branch
+  - on_premise
+  - disabled
+- name: Space
+  fields:
+  - id
+  - name
+  - permanent
+  - tracking_branch
+  - tracking_tag
+  - namespace
+  - mode
+  - deployment_strategy
+  - error_message
+  - production
+  - dependencies_status
+  - pool_id
+  - pool_cluster_id
+  - pool_name
+  - current_snapshot_id
+  - newest_snapshot_id
+  - aasm_state
+  - latest_deploy_id
+  - env_id
+  - version
+  - latest_version
+  - digest_version
+  - latest_digest_version
+  - last_deployed_at
+  - connected
+  - expires_at
+  - expires_at_in_seconds
+  - pull_request_title
+  - pull_request_url
+  - primary_display_url
+  - enabled
+  - orphaned_connected_space
+- name: Build
+  fields:
+  - id
+  - name
+  - branch
+  - tag
+  - aasm_state
+  - message
+  - created_at
+  - started_at
+  - total_duration
+  - commit_long
+  - commit_short
+  - commit_date
+  - commit_message
+  - commit_user
+- name: Pipeline
+  fields:
+  - id
+  - aasm_state
+  - status_reason
+  - started_at
+  - total_duration
+  - error_message
+  - name
+  - commit_long
+  - commit_short
+  - commit_date
+- name: BuildIndex
+  fields:
+  - total_count
+  - current_page
+  - per_page
+  - total_pages
+  - items
+relationships:
+- from: Account
+  to: Cluster
+  type: has_many
+  via: account_id (path)
+- from: Account
+  to: App
+  type: has_many
+  via: account scope
+- from: App
+  to: Space
+  type: has_many
+  via: app_id (path)
+  note: Space = environment
+- from: App
+  to: Build
+  type: has_many
+  via: app_id (path)
+- from: App
+  to: Pipeline
+  type: has_many
+  via: app_id (path)
+- from: App
+  to: SerializedConfig
+  type: has_many
+  via: app_id (path)
+- from: Space
+  to: App
+  type: belongs_to
+  via: app_id (path)
+- from: Space
+  to: Instance
+  type: has_many
+  via: space_id (path)
+- from: Space
+  to: Pipeline
+  type: has_many
+  via: space_id (path)
+- from: Space
+  to: RemoteDevelopment
+  type: has_one
+  via: space_id (path)
+- from: Cluster
+  to: DatabaseSnapshot
+  type: has_many
+  via: cluster id (path)
+- from: Build
+  to: App
+  type: belongs_to
+  via: app_id (path)

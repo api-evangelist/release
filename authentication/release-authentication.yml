@@ -1,0 +1,32 @@
+generated: '2026-07-21'
+method: searched
+source: openapi/release-openapi-original.json
+docs: https://docs.release.com/reference-documentation/release-api/authentication.md
+notes: >-
+  Two apiKey header credentials are required together (X-User-Email + X-User-Token),
+  sourced from ~/.release.yaml (populated by `release auth login`). Some Platform API
+  endpoints instead use account-level headers X-Account-ID + X-Account-Token (found in
+  Account Settings > Account Info); AI Sandbox and GraphQL APIs always use user auth.
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+  account_level_headers:
+  - X-Account-ID
+  - X-Account-Token
+schemes:
+- name: userEmail
+  type: apiKey
+  in: header
+  parameter: X-User-Email
+  description: User's email address for authentication
+  sources:
+  - openapi/release-openapi-original.json
+- name: userToken
+  type: apiKey
+  in: header
+  parameter: X-User-Token
+  description: User's authentication token (from ~/.release.yaml)
+  sources:
+  - openapi/release-openapi-original.json

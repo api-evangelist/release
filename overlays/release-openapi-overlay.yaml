@@ -1,0 +1,18 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Release.com Platform API
+  version: 1.0.0
+extends: openapi/release-openapi-original.json
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-provider: release
+      x-apievangelist-network: https://apis.io/providers/release
+      x-apievangelist-auth: apiKey headers (X-User-Email + X-User-Token)
+      x-apievangelist-docs: https://docs.release.com/reference-documentation/release-api.md
+  - target: $.info
+    update:
+      x-agentic-access: agentic-access/release-agentic-access.yml
+  - target: $.info
+    update:
+      x-apievangelist-conventions: conventions/release-conventions.yml

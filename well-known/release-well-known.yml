@@ -1,0 +1,27 @@
+generated: '2026-07-21'
+method: searched
+notes: >-
+  Probed the standard /.well-known/ discovery surface on the website, API, and docs
+  hosts. Release publishes none of these files (all 404). Empty is a valid, expected
+  result — recorded for auditability. Release's machine-readable discovery is instead
+  the OpenAPI contract at https://api.release.com/openapi.json and the llms.txt at
+  https://docs.release.com/llms.txt (captured as separate artifacts).
+hosts:
+  - host: https://api.release.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+  - host: https://release.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+  - host: https://docs.release.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404

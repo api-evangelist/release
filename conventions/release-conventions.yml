@@ -1,0 +1,47 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.release.com/reference-documentation/release-api/agent-integration-guide.md
+notes: >-
+  Cross-cutting request/response semantics for the Release Platform API, captured from
+  the API reference + Agent Integration Guide and derived from the OpenAPI contract.
+authentication:
+  style: apiKey headers
+  headers:
+    - name: X-User-Email
+      value: login from ~/.release.yaml
+    - name: X-User-Token
+      value: token from ~/.release.yaml
+  account_level:
+    - name: X-Account-ID
+    - name: X-Account-Token
+  note: AI Sandbox and GraphQL APIs always use user auth; some Platform endpoints require account auth (CI/CD).
+  ref: authentication/release-authentication.yml
+content_type: application/json
+pagination:
+  style: page-number
+  params: [page, per_page]
+  example: "?page=1&per_page=25"
+  applies_to: list endpoints
+identifiers:
+  format: Hashid strings
+  note: path params accept integer or hashid; example "abc123"
+timestamps:
+  format: ISO 8601
+  example: "2025-01-15T10:30:00Z"
+nullable_fields:
+  format: returns null
+error_envelope:
+  shape: '{"error": "message"} or {"errors": [...]}'
+  fields: [error, message, errors]
+  rfc9457: false
+  ref: errors/release-problem-types.yml
+idempotency:
+  supported: false
+  note: Release does not document an Idempotency-Key header or idempotent-retry contract for the Platform API.
+versioning:
+  scheme: uri-path
+  note: REST endpoints are served under /api/v1 on api.release.com; a Legacy environments API is documented as deprecated.
+  ref: lifecycle/release-lifecycle.yml
+machine_readable:
+  openapi: https://api.release.com/openapi.json
+  llms_txt: https://docs.release.com/llms.txt

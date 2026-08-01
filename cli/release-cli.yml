@@ -1,0 +1,63 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.release.com/cli/release.md
+name: release
+description: The official CLI for Release (release.com) — manage accounts, apps, environments, builds, clusters, and deploys.
+binary: release
+config_file: $HOME/.release.yaml
+install:
+  - method: homebrew
+    command: brew install releasehub-com/tap/release-cli
+  - method: docker
+    command: docker run public.ecr.aws/releasehub-com/release-cli
+  - method: binary
+    command: download from https://docs.release.com/cli/installation.md
+global_options:
+  - flag: --config <string>
+    description: config file (default is $HOME/.release.yaml)
+  - flag: --debug
+    description: enable debug logging
+shell_completions: [bash, zsh, fish]
+command_groups:
+  - name: accounts
+    description: Manage accounts
+    subcommands: [list, select]
+  - name: ai
+    description: Work with AI (Release.ai)
+    subcommands: [chat, config-delete, config-init, config-select, config-upsert]
+  - name: apps
+    description: Manage apps
+    subcommands: [list, select]
+  - name: auth
+    description: Manage authentication (login, logout, etc.)
+    subcommands: [login, logout]
+  - name: builds
+    description: Manage builds
+    subcommands: [create]
+  - name: clusters
+    description: Manage clusters
+    subcommands: [exec, kubeconfig, shell]
+  - name: datasets
+    description: Manage datasets
+    subcommands: [list, refresh]
+  - name: deploys
+    description: Manage deploys
+    subcommands: [create]
+  - name: development
+    description: Work with remote development environments
+  - name: environments
+    description: Manage environments
+  - name: gitops
+    description: Manage GitOps config
+  - name: instances
+    description: Manage instances
+key_flows:
+  - name: Authenticate
+    command: release auth login
+    result: writes login + token to ~/.release.yaml
+  - name: Open a shell into a cluster
+    command: release clusters shell
+  - name: Trigger a deploy
+    command: release deploys create
+  - name: Remote development environment
+    command: release development

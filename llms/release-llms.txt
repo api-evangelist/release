@@ -1,0 +1,304 @@
+# Release
+
+## Release
+
+- [Welcome to Release](https://docs.release.com/readme.md): Release simplifies development by making the creation of environments easy
+- [Quickstart](https://docs.release.com/getting-started/quickstart.md)
+- [Create an account](https://docs.release.com/getting-started/create-an-account.md)
+- [Prepare to use Release](https://docs.release.com/getting-started/prepare-to-use-release.md)
+- [Create an application](https://docs.release.com/getting-started/create-application.md): Learn how to create an application in Release
+- [Create custom application](https://docs.release.com/getting-started/create-application/create-from-custom.md): Learn how to create a custom application in Release
+- [Create from template](https://docs.release.com/getting-started/create-application/create-from-template.md): Learn how to create applications from templates in Release
+- [Servers vs runnables](https://docs.release.com/getting-started/create-application/servers-vs-runnables.md): Learn the difference between servers and runnables
+- [Create an environment](https://docs.release.com/getting-started/create-an-environment.md)
+- [Domains and DNS](https://docs.release.com/guides-and-examples/domains-and-dns.md)
+- [Manage domains](https://docs.release.com/guides-and-examples/domains-and-dns/managing-your-domains.md)
+- [DNS and nameservers](https://docs.release.com/guides-and-examples/domains-and-dns/external-dns.md): How to set up external DNS services to work with Release
+- [Configure GoDaddy](https://docs.release.com/guides-and-examples/domains-and-dns/external-dns/godaddy.md)
+- [Configure Cloudflare](https://docs.release.com/guides-and-examples/domains-and-dns/external-dns/cloudflare.md)
+- [Configure Namecheap](https://docs.release.com/guides-and-examples/domains-and-dns/external-dns/namecheap.md)
+- [Other DNS hosts](https://docs.release.com/guides-and-examples/domains-and-dns/external-dns/generic-dns.md)
+- [Routing traffic](https://docs.release.com/guides-and-examples/domains-and-dns/routing-traffic.md)
+- [Example applications](https://docs.release.com/guides-and-examples/common-setup-examples.md): Discover typical Release set-up patterns here.
+- [Full stack voting app](https://docs.release.com/guides-and-examples/common-setup-examples/example-voting-app.md)
+- [Flask and RDS counter app](https://docs.release.com/guides-and-examples/common-setup-examples/flask-rds.md)
+- [Static site with Gatsby](https://docs.release.com/guides-and-examples/common-setup-examples/simple-static-build-example-gatsby-starter-theme.md)
+- [Golang with Postgres and Nginx](https://docs.release.com/guides-and-examples/common-setup-examples/nginx-postgres-go-docker.md)
+- [WordPress with MySQL](https://docs.release.com/guides-and-examples/common-setup-examples/wordpress-mysql.md)
+- [Spring and PostgreSQL](https://docs.release.com/guides-and-examples/common-setup-examples/spring-postgresql.md)
+- [Terraform and Flask](https://docs.release.com/guides-and-examples/common-setup-examples/terraform-flask-redis.md)
+- [OpenTelemetry demo](https://docs.release.com/guides-and-examples/common-setup-examples/opentelemetry-demo.md)
+- [Load balancer with hostname](https://docs.release.com/guides-and-examples/common-setup-examples/load-balancer-with-hostname.md): Exposing HTTP and non-HTTP-based services to the internet
+- [Static JavaScript service](https://docs.release.com/guides-and-examples/common-setup-examples/define-a-static-javascript-service.md): How to define a new static JavaScript service or convert an existing Docker service to use a static JavaScript build deployed to a CDN
+- [SSH bastion access to services](https://docs.release.com/guides-and-examples/common-setup-examples/adding-ssh-bastion-access-to-services.md): Access namespace services like pods or databases for maintenance
+- [ngrok and OAuth for private tunnels](https://docs.release.com/guides-and-examples/common-setup-examples/using-ngrok-+-oauth-for-private-tunnels.md): Protect private services in Release with ngrok
+- [Using OAuth Proxy](https://docs.release.com/guides-and-examples/common-setup-examples/opensource-oauth-proxy.md)
+- [Hybrid Docker and static site](https://docs.release.com/guides-and-examples/common-setup-examples/hybrid-docker-+-static-site-example.md)
+- [App Imports: Connecting two applications](https://docs.release.com/guides-and-examples/common-setup-examples/app-imports-connecting-two-apps-together.md)
+- [Example library](https://docs.release.com/guides-and-examples/common-setup-examples/example-library.md): Awesome-Release GitHub repo with tons of working starter projects and examples
+- [Running instances](https://docs.release.com/guides-and-examples/running-instances.md): How to manage instances running in your environments
+- [Cron jobs](https://docs.release.com/guides-and-examples/running-instances/cron-jobs.md): How to create cron jobs
+- [Jobs](https://docs.release.com/guides-and-examples/running-instances/jobs.md): How to create jobs
+- [Using Helm charts](https://docs.release.com/guides-and-examples/running-instances/using-helm-charts.md): How to use Helm charts with your Release instances
+- [Using terminal](https://docs.release.com/guides-and-examples/running-instances/using-terminal.md): How to open a terminal to a specific running container
+- [Viewing logs](https://docs.release.com/guides-and-examples/running-instances/viewing-logs.md): How to view logs for a specific instance or container
+- [Troubleshooting](https://docs.release.com/guides-and-examples/running-instances/troubleshooting.md): Troubleshooting your running instances
+- [ImagePullBackoff error](https://docs.release.com/guides-and-examples/running-instances/troubleshooting/image-pull-backoff.md): How to debug an ImagePullBackOff error
+- [CrashLoopBackoff error](https://docs.release.com/guides-and-examples/running-instances/troubleshooting/crash-loop-backoff.md): How to troubleshoot a CrashLoopBackOff error
+- [Exit codes](https://docs.release.com/guides-and-examples/running-instances/troubleshooting/exit-codes.md): How to troubleshoot exit codes
+- [OOM: out of memory](https://docs.release.com/guides-and-examples/running-instances/troubleshooting/oom-out-of-memory.md): How to troubleshoot OOM errors
+- [Advanced guides](https://docs.release.com/guides-and-examples/advanced-guides.md)
+- [Containers guide](https://docs.release.com/guides-and-examples/advanced-guides/containers.md)
+- [Application guide](https://docs.release.com/guides-and-examples/advanced-guides/application.md)
+- [Kubernetes guide](https://docs.release.com/guides-and-examples/advanced-guides/kubernetes.md)
+- [Create a cluster](https://docs.release.com/guides-and-examples/advanced-guides/create-a-cluster.md)
+- [Upgrade a cluster](https://docs.release.com/guides-and-examples/advanced-guides/upgrade-a-cluster.md)
+- [Managing node groups](https://docs.release.com/guides-and-examples/advanced-guides/managing-your-node-groups.md)
+- [Patch node groups](https://docs.release.com/guides-and-examples/advanced-guides/patch-node-groups.md): Learn how to patch node groups to update their AMI or Kubernetes version
+- [Hostnames and rules](https://docs.release.com/guides-and-examples/advanced-guides/hostnames-and-rules.md): Customize the URLs used by each of your services for easier discovery and collaboration
+- [Serve traffic on multiple ports](https://docs.release.com/guides-and-examples/advanced-guides/serve-traffic-on-multiple-ports.md): How to set up a service that accepts traffic on two different ports
+- [Configure access to your K8s cluster](https://docs.release.com/guides-and-examples/advanced-guides/how-to-configure-access-to-your-k8s-cluster.md): Learn how to create access controls and view your cluster using kubectl, K9s, and eksctl
+- [Restrict cluster API access](https://docs.release.com/guides-and-examples/advanced-guides/restrict-cluster-api-access.md): Lock down your cluster's Kubernetes API server to a specific list of source IP addresses (allowed hosts) for AWS EKS and GCP GKE clusters, without losing Release's management access.
+- [Designing for multiple environments](https://docs.release.com/guides-and-examples/advanced-guides/designing-for-multiple-environments.md)
+- [Microservices architecture](https://docs.release.com/guides-and-examples/advanced-guides/microservices-architecture.md): Creating applications from multiple repositories
+- [Monitoring your clusters](https://docs.release.com/guides-and-examples/advanced-guides/monitoring-your-release-clusters.md)
+- [Performance tuning](https://docs.release.com/guides-and-examples/advanced-guides/performance-tuning-apm.md)
+- [Visibility and monitoring](https://docs.release.com/guides-and-examples/advanced-guides/visibility.md)
+- [Working with data](https://docs.release.com/guides-and-examples/advanced-guides/data.md)
+- [Container-based data](https://docs.release.com/guides-and-examples/advanced-guides/data/container-based-data.md)
+- [Seeding and migration](https://docs.release.com/guides-and-examples/advanced-guides/data/seeding-migration.md)
+- [Cloud-provided data](https://docs.release.com/guides-and-examples/advanced-guides/data/cloud-provided.md)
+- [Golden images](https://docs.release.com/guides-and-examples/advanced-guides/data/golden-images.md)
+- [Third party](https://docs.release.com/guides-and-examples/advanced-guides/data/third-party.md)
+- [Pausing Instant Datasets](https://docs.release.com/guides-and-examples/advanced-guides/pausing-instant-datasets.md): How to pause, resume, or set schedules for Instant Datasets
+- [Application pausing schedules](https://docs.release.com/guides-and-examples/advanced-guides/pausing-instant-datasets/application-pausing-schedules.md): How to set, change, or remove default application pause and resume schedules for Instant Datasets
+- [Pause/resume environments](https://docs.release.com/guides-and-examples/advanced-guides/pausing-instant-datasets/pausing-resuming-environments.md): How to pause and resume Instant Datasets in individual environments
+- [Infrastructure as code](https://docs.release.com/guides-and-examples/advanced-guides/infrastructure.md)
+- [Terraform](https://docs.release.com/guides-and-examples/advanced-guides/infrastructure/terraform.md)
+- [Account settings](https://docs.release.com/reference-documentation/account-settings.md)
+- [Account info](https://docs.release.com/reference-documentation/account-settings/account-info.md)
+- [Managing users](https://docs.release.com/reference-documentation/account-settings/managing-users.md): Expand your team and share your environments
+- [Build settings](https://docs.release.com/reference-documentation/account-settings/build-settings.md)
+- [Build arguments](https://docs.release.com/reference-documentation/account-settings/build-settings/build-args.md): Docker build arguments and static service environment variables
+- [Build SSH keys](https://docs.release.com/reference-documentation/account-settings/build-settings/build-ssh-keys.md): Securely pass SSH keys to the Docker build command
+- [Add integrations](https://docs.release.com/reference-documentation/account-settings/add-integrations.md): Connect your account with an external service to get the most out of Release features
+- [View clusters and cloud integrations](https://docs.release.com/reference-documentation/account-settings/view-clusters.md)
+- [Add datasets](https://docs.release.com/reference-documentation/account-settings/add-datasets.md): Create production data replicas for accurate testing in your environments
+- [Environment handles](https://docs.release.com/reference-documentation/account-settings/environment-handles.md): Create custom, unique resource pools for your environments.
+- [Workflows in Release](https://docs.release.com/reference-documentation/workflows-in-release.md)
+- [Stages of workflows](https://docs.release.com/reference-documentation/workflows-in-release/stages-of-workflows.md)
+- [Serial deployments](https://docs.release.com/reference-documentation/workflows-in-release/serial-deployments.md)
+- [Parallel deployments](https://docs.release.com/reference-documentation/workflows-in-release/parallel-deployments.md)
+- [Rolling deployments](https://docs.release.com/reference-documentation/workflows-in-release/rolling-deployments.md)
+- [Rainbow deployments](https://docs.release.com/reference-documentation/workflows-in-release/rainbow-deployments.md)
+- [Networking](https://docs.release.com/reference-documentation/networking.md)
+- [Network architecture (AWS)](https://docs.release.com/reference-documentation/networking/releasehub-network-architecture-aws.md)
+- [Network architecture (GCP)](https://docs.release.com/reference-documentation/networking/network-architecture-gcp.md)
+- [Ingresses](https://docs.release.com/reference-documentation/networking/ingresses.md)
+- [IP addresses](https://docs.release.com/reference-documentation/networking/ip-addresses.md)
+- [Cloud-provided services](https://docs.release.com/reference-documentation/networking/cloud-provided-services.md)
+- [Third-party services](https://docs.release.com/reference-documentation/networking/third-party-services.md)
+- [Release environment versioning](https://docs.release.com/reference-documentation/release-environment-versioning.md): How Release versions environments
+- [Application settings](https://docs.release.com/reference-documentation/application-settings.md): Settings and default configuration for your application's environments
+- [Application Template](https://docs.release.com/reference-documentation/application-settings/application-template.md): How the Release Application Template works
+- [Schema definition](https://docs.release.com/reference-documentation/application-settings/application-template/schema-definition.md)
+- [Default environment variables](https://docs.release.com/reference-documentation/application-settings/default-environment-variables.md): How to create and manage default environment variables for your Release environments
+- [GitHub](https://docs.release.com/reference-documentation/application-settings/github.md): Create environments in Release with GitHub labels
+- [Pull requests](https://docs.release.com/reference-documentation/application-settings/github-1.md): Create environments in Release by pull request
+- [GitOps](https://docs.release.com/reference-documentation/application-settings/gitops.md): Enable GitOps integration for your application
+- [Just-in-time file mounts](https://docs.release.com/reference-documentation/application-settings/file-mounts.md): Mount files on your running Docker containers.
+- [Primary App Link](https://docs.release.com/reference-documentation/application-settings/primary-app-link.md): Assign a specific environment service to be the primary hostname URL
+- [Create application FAQ](https://docs.release.com/reference-documentation/application-settings/create-application-faqs.md)
+- [App-level build arguments](https://docs.release.com/reference-documentation/application-settings/app-level-build-arguments.md): Add build arguments for one specific application.
+- [Parameters](https://docs.release.com/reference-documentation/application-settings/parameters.md)
+- [Workspaces](https://docs.release.com/reference-documentation/application-settings/workspaces.md)
+- [Triggers](https://docs.release.com/reference-documentation/application-settings/triggers.md)
+- [End-to-end testing](https://docs.release.com/reference-documentation/e2e-testing.md): How to integrate third-party CI platforms with Release to do end-to-end testing
+- [Environment settings](https://docs.release.com/reference-documentation/environment-settings.md): Settings specific to a particular environment
+- [Environment configuration](https://docs.release.com/reference-documentation/environment-settings/environment-configuration.md)
+- [Environment variables](https://docs.release.com/reference-documentation/environment-settings/environment-specific-environment-variables.md): How to create and manage environment variables for a particular environment
+- [Environment variable mappings](https://docs.release.com/reference-documentation/environment-settings/environment-specific-environment-variables/environment-variable-mappings.md): Why and how to use environment variable mappings
+- [Secrets vaults](https://docs.release.com/reference-documentation/environment-settings/environment-specific-environment-variables/secrets.md): Importing secrets from external secrets managers
+- [Using Secrets with GitOps](https://docs.release.com/reference-documentation/environment-settings/environment-specific-environment-variables/using-secrets-with-gitops.md): How to manage and reference secrets with GitOps
+- [Kubernetes Secrets as environment variables](https://docs.release.com/reference-documentation/environment-settings/environment-specific-environment-variables/kubernetes-secrets-as-environment-variables.md): Importing secrets from Kubernetes
+- [Managing legacy Release Secrets](https://docs.release.com/reference-documentation/environment-settings/environment-specific-environment-variables/managing-secrets.md): Learn how to create and edit secret environment variables for your Release environments
+- [Environment expiration](https://docs.release.com/reference-documentation/environment-expiration.md): How to determine and modify the life span of an ephemeral environment.
+- [Environment presets](https://docs.release.com/reference-documentation/environment-presets.md): Create custom, unique resource pools for your environments.
+- [Instant datasets on AWS](https://docs.release.com/reference-documentation/instant-datasets-aws.md): How to use Instant Datasets in Release on AWS
+- [Instant datasets on GCP](https://docs.release.com/reference-documentation/instant-datasets-gcp.md): How to use Instant Datasets in Release on GCP
+- [Instant dataset tasks](https://docs.release.com/reference-documentation/instant-dataset-tasks.md): Modify your snapshot data before incorporating it into databases
+- [Tonic Cloud](https://docs.release.com/reference-documentation/instant-dataset-tasks/tonic-cloud.md): Use Instant Datasets with Tonic Cloud
+- [Tonic On-Premise](https://docs.release.com/reference-documentation/instant-dataset-tasks/tonic-cloud-1.md): Use Instant Datasets with Tonic On-Premise
+- [Cloud resources](https://docs.release.com/reference-documentation/cloud-resources.md): Tag AWS ECS tasks to use them with your Release environments
+- [Static service deployment](https://docs.release.com/reference-documentation/static-service-deployment.md): The simplest, cheapest, and most performant way to deploy your frontend
+- [Helm](https://docs.release.com/reference-documentation/helm.md)
+- [Getting started](https://docs.release.com/reference-documentation/helm/getting-started.md)
+- [Version-controlled Helm charts](https://docs.release.com/reference-documentation/helm/version-controlled-charts.md)
+- [Open-source charts](https://docs.release.com/reference-documentation/helm/open-source-charts.md)
+- [Building Docker images](https://docs.release.com/reference-documentation/helm/building-docker-images.md)
+- [Ingress and networking](https://docs.release.com/reference-documentation/helm/ingress-and-networking.md)
+- [Configuration](https://docs.release.com/reference-documentation/helm/configuration.md)
+- [GitOps](https://docs.release.com/reference-documentation/gitops.md): Description of Release GitOps workflow
+- [The .release.yaml file](https://docs.release.com/reference-documentation/release.yaml.md): Customize how your application is built and run
+- [Docker Compose conversion support](https://docs.release.com/reference-documentation/docker-compose-conversion-support.md): The Release team has worked with thousands of Docker Compose files to generate working environments in Kubernetes. Here is the supported conversion matrix for Docker Compose
+- [Reference examples](https://docs.release.com/reference-documentation/reference-examples.md): Describe functionality with examples
+- [Adding and removing services](https://docs.release.com/reference-documentation/reference-examples/adding-and-removing-services.md): How to add or remove services based on templates or for particular environments
+- [Managing service resources](https://docs.release.com/reference-documentation/reference-examples/managing-service-resources.md): Working with defaults and overrides for resources
+- [Adding database containers to the Application Template](https://docs.release.com/reference-documentation/reference-examples/adding-database-containers-to-application-templates.md): Best practices for running your application's database in a container
+- [Stock Off-The-Shelf Examples](https://docs.release.com/reference-documentation/reference-examples/stock-off-the-shelf-examples.md)
+- [Release API](https://docs.release.com/reference-documentation/release-api.md)
+- [Agent Integration Guide](https://docs.release.com/reference-documentation/release-api/agent-integration-guide.md)
+- [Authentication](https://docs.release.com/reference-documentation/release-api/authentication.md)
+- [Platform API](https://docs.release.com/reference-documentation/release-api/platform-api.md)
+- [Accounts](https://docs.release.com/reference-documentation/release-api/platform-api/accounts.md)
+- [Apps](https://docs.release.com/reference-documentation/release-api/platform-api/apps.md)
+- [Environments](https://docs.release.com/reference-documentation/release-api/platform-api/environments.md)
+- [Deploys](https://docs.release.com/reference-documentation/release-api/platform-api/deploys.md)
+- [Clusters](https://docs.release.com/reference-documentation/release-api/platform-api/clusters.md)
+- [Builds](https://docs.release.com/reference-documentation/release-api/platform-api/builds.md)
+- [AI Sandbox API](https://docs.release.com/reference-documentation/release-api/ai-sandbox-api.md)
+- [Sessions](https://docs.release.com/reference-documentation/release-api/ai-sandbox-api/sessions.md)
+- [Executions](https://docs.release.com/reference-documentation/release-api/ai-sandbox-api/executions.md)
+- [Snapshots](https://docs.release.com/reference-documentation/release-api/ai-sandbox-api/snapshots.md)
+- [Events](https://docs.release.com/reference-documentation/release-api/ai-sandbox-api/events.md)
+- [Memory Stores](https://docs.release.com/reference-documentation/release-api/ai-sandbox-api/memory-stores.md)
+- [File Uploads](https://docs.release.com/reference-documentation/release-api/ai-sandbox-api/file-uploads.md)
+- [GraphQL API](https://docs.release.com/reference-documentation/release-api/graphql-api.md)
+- [Legacy API (Deprecated)](https://docs.release.com/reference-documentation/release-api/environments-api.md): This is a list of external APIs available for Release environments
+- [Create](https://docs.release.com/reference-documentation/release-api/environments-api/environments-create-api.md)
+- [Get](https://docs.release.com/reference-documentation/release-api/environments-api/environments-create-api-1.md)
+- [Setup](https://docs.release.com/reference-documentation/release-api/environments-api/environment-setup-api.md)
+- [Patch](https://docs.release.com/reference-documentation/release-api/environments-api/environments-patch-api.md)
+- [Environment Presets API](https://docs.release.com/reference-documentation/release-api/environments-api/environment-presets-api.md): This is a list of external APIs available for Release environment presets
+- [Get Environment Preset List](https://docs.release.com/reference-documentation/release-api/environments-api/environment-presets-api/retrieve-environment-preset-list.md)
+- [Get Environment Preset](https://docs.release.com/reference-documentation/release-api/environments-api/environment-presets-api/retrieve-environment-preset.md)
+- [Put Environment Preset](https://docs.release.com/reference-documentation/release-api/environments-api/environment-presets-api/update-environment-preset.md)
+- [How Release works](https://docs.release.com/background-concepts/how-release-works-in-great-detail.md)
+- [Release FAQ](https://docs.release.com/frequently-asked-questions/release-faq.md)
+- [AWS FAQ](https://docs.release.com/frequently-asked-questions/aws-support-faqs.md)
+- [Docker FAQ](https://docs.release.com/frequently-asked-questions/docker-support-faqs.md)
+- [JavaScript FAQ](https://docs.release.com/frequently-asked-questions/javascript-support-faqs.md)
+- [Integrations overview](https://docs.release.com/integrations/integrations-overview.md): Integrate Release with popular SaaS platforms
+- [Artifactory integration](https://docs.release.com/integrations/integrations-overview/artifactory-integration.md)
+- [Cloud integrations (AWS)](https://docs.release.com/integrations/integrations-overview/aws-integration.md): Release integrates with your favorite cloud provider(s)! This is the first step in building out a self-hosted cluster in the cloud provider account of your choice.
+- [AWS guides](https://docs.release.com/integrations/integrations-overview/aws-integration/aws-howtos.md)
+- [Grant access to AWS resources](https://docs.release.com/integrations/integrations-overview/aws-integration/grant-access-to-aws-resources-s3-etc.-from-release.md): Allow self-hosted clusters to access AWS resources
+- [AWS how to increase EIP quota](https://docs.release.com/integrations/integrations-overview/aws-integration/aws-how-to-increase-eip-quota.md)
+- [Control your EKS fleet with systems manager](https://docs.release.com/integrations/integrations-overview/aws-integration/control-your-eks-fleet-with-systems-manager.md): How to use AWS Systems Manager to install agents or to configure your EKS worker nodes automatically.
+- [Managing STS access](https://docs.release.com/integrations/integrations-overview/aws-integration/managing-sts-access-in-regions.md)
+- [AWS Permissions Boundaries](https://docs.release.com/integrations/integrations-overview/aws-integration/how-to-use-the-permissions-boundary-to-restrict-release-access.md): How to restrict Release permissions for fine-grained control
+- [Private ECR Repositories](https://docs.release.com/integrations/integrations-overview/aws-integration/private-aws-ecr-image-repository.md)
+- [Using an Existing AWS VPC](https://docs.release.com/integrations/integrations-overview/aws-integration/using-an-existing-vpc.md)
+- [Using an Existing EKS Cluster](https://docs.release.com/integrations/integrations-overview/aws-integration/using-an-existing-eks-cluster.md)
+- [Docker Hub integration](https://docs.release.com/integrations/integrations-overview/docker-hub-integration.md): Describes the functionality Release offers with its DockerHub integration
+- [LaunchDarkly integration](https://docs.release.com/integrations/integrations-overview/launchdarkly-integration.md): The functionality of Release's LaunchDarkly integration and how to set it up
+- [Private registries](https://docs.release.com/integrations/integrations-overview/private-registry.md): Release's private registry functionality and how to set it up
+- [Slack integration](https://docs.release.com/integrations/integrations-overview/slack-integration.md): How to set up the Release Slack integration
+- [Cloud integrations (GCP)](https://docs.release.com/integrations/integrations-overview/gcp-integration.md): The first step in building out a self-hosted cluster in GCP.
+- [GCP Permissions Boundary](https://docs.release.com/integrations/integrations-overview/gcp-integration/gcp-permissions-boundary.md): This page describes how to restrict Release permissions to the GCP integration project(s)
+- [Cloud integrations (Azure)](https://docs.release.com/integrations/integrations-overview/azure-integration.md): The first step in building out a self-hosted cluster in Azure.
+- [Datadog Agent](https://docs.release.com/integrations/integrations-overview/datadog-agent.md)
+- [Doppler Secrets Manager](https://docs.release.com/integrations/integrations-overview/doppler-secrets-manager.md): The functionality of Release's Doppler Secrets Manager integration and how to set it up
+- [AWS Secrets Management](https://docs.release.com/integrations/integrations-overview/aws-secrets-management.md)
+- [PlanetScale integration](https://docs.release.com/integrations/integrations-overview/planetscale-integration.md): How to set up the Release PlanetScale integration for instant databases
+- [Neon integration](https://docs.release.com/integrations/integrations-overview/neon-integration.md): How to set up the Release Neon integration for instant databases
+- [Supabase integration](https://docs.release.com/integrations/integrations-overview/supabase-integration.md): How to set up the Release Supabase integration for instant databases
+- [Source control integrations](https://docs.release.com/integrations/source-control-integrations.md)
+- [GitHub](https://docs.release.com/integrations/source-control-integrations/github.md)
+- [Pull request comments](https://docs.release.com/integrations/source-control-integrations/github/pull-request-comments.md)
+- [Pull request labels](https://docs.release.com/integrations/source-control-integrations/github/pull-request-labels.md)
+- [GitHub deployments](https://docs.release.com/integrations/source-control-integrations/github/github-deployments.md)
+- [GitHub statuses](https://docs.release.com/integrations/source-control-integrations/github/github-statuses.md)
+- [Remove GitHub integration](https://docs.release.com/integrations/source-control-integrations/github/remove-github-integration.md)
+- [Bitbucket](https://docs.release.com/integrations/source-control-integrations/bitbucket.md)
+- [GitLab](https://docs.release.com/integrations/source-control-integrations/gitlab.md)
+- [Monitoring and logging add-ons](https://docs.release.com/integrations/monitoring-and-logging-add-ons.md)
+- [Datadog](https://docs.release.com/integrations/monitoring-and-logging-add-ons/datadog.md)
+- [New Relic](https://docs.release.com/integrations/monitoring-and-logging-add-ons/new-relic.md)
+- [ELK (Elasticsearch, Logstash, and Kibana)](https://docs.release.com/integrations/monitoring-and-logging-add-ons/elasticsearch-logstash-and-kibana.md)
+- [Create new customer integration](https://docs.release.com/release-delivery/new-customer-integration.md)
+- [Delivery guide](https://docs.release.com/release-delivery/release-delivery-guide.md)
+- [Release to customer account access controls](https://docs.release.com/release-delivery/release-to-customer-account-access-controls-aws.md)
+- [Delivery FAQs](https://docs.release.com/release-delivery/release-delivery-faqs.md)
+- [Introduction](https://docs.release.com/release-instant-datasets/introduction.md)
+- [Quickstart](https://docs.release.com/release-instant-datasets/quickstart.md)
+- [Security](https://docs.release.com/release-instant-datasets/security.md)
+- [AWS Instant Dataset security](https://docs.release.com/release-instant-datasets/security/aws-instant-dataset-security.md): How to secure standalone Instant Datasets using AWS
+- [FAQ](https://docs.release.com/release-instant-datasets/faq.md)
+- [Getting started](https://docs.release.com/cli/getting-started.md)
+- [Installation](https://docs.release.com/cli/installation.md): Installation guide for the Release CLI
+- [Configuration](https://docs.release.com/cli/configuration.md): Configuration options for the Release CLI
+- [CLI usage example](https://docs.release.com/cli/cli-usage-example.md)
+- [Remote development environments](https://docs.release.com/cli/remote-dev.md)
+- [Command reference](https://docs.release.com/cli/release.md): Command reference doc for the Release CLI
+- [release accounts](https://docs.release.com/cli/release/accounts.md): Command reference doc for the Release CLI
+- [release accounts list](https://docs.release.com/cli/release/accounts/list.md): Command reference doc for the Release CLI
+- [release accounts select](https://docs.release.com/cli/release/accounts/select.md): Command reference doc for the Release CLI
+- [release ai](https://docs.release.com/cli/release/ai.md): Command reference doc for the Release CLI
+- [release ai chat](https://docs.release.com/cli/release/ai/chat.md): Command reference doc for the Release CLI
+- [release ai config-delete](https://docs.release.com/cli/release/ai/config-delete.md): Command reference doc for the Release CLI
+- [release ai config-init](https://docs.release.com/cli/release/ai/config-init.md): Command reference doc for the Release CLI
+- [release ai config-select](https://docs.release.com/cli/release/ai/config-select.md): Command reference doc for the Release CLI
+- [release ai config-upsert](https://docs.release.com/cli/release/ai/config-upsert.md): Command reference doc for the Release CLI
+- [release apps](https://docs.release.com/cli/release/apps.md): Command reference doc for the Release CLI
+- [release apps list](https://docs.release.com/cli/release/apps/list.md): Command reference doc for the Release CLI
+- [release apps select](https://docs.release.com/cli/release/apps/select.md): Command reference doc for the Release CLI
+- [release auth](https://docs.release.com/cli/release/auth.md): Command reference doc for the Release CLI
+- [release auth login](https://docs.release.com/cli/release/auth/login.md): Command reference doc for the Release CLI
+- [release auth logout](https://docs.release.com/cli/release/auth/logout.md): Command reference doc for the Release CLI
+- [release builds](https://docs.release.com/cli/release/builds.md): Command reference doc for the Release CLI
+- [release builds create](https://docs.release.com/cli/release/builds/create.md): Command reference doc for the Release CLI
+- [release clusters](https://docs.release.com/cli/release/clusters.md): Command reference doc for the Release CLI
+- [release clusters exec](https://docs.release.com/cli/release/clusters/exec.md): Command reference doc for the Release CLI
+- [release clusters kubeconfig](https://docs.release.com/cli/release/clusters/kubeconfig.md): Command reference doc for the Release CLI
+- [release clusters shell](https://docs.release.com/cli/release/clusters/shell.md): Command reference doc for the Release CLI
+- [release datasets](https://docs.release.com/cli/release/datasets.md): Command reference doc for the Release CLI
+- [release datasets list](https://docs.release.com/cli/release/datasets/list.md): Command reference doc for the Release CLI
+- [release datasets refresh](https://docs.release.com/cli/release/datasets/refresh.md): Command reference doc for the Release CLI
+- [release deploys](https://docs.release.com/cli/release/deploys.md): Command reference doc for the Release CLI
+- [release deploys create](https://docs.release.com/cli/release/deploys/create.md): Command reference doc for the Release CLI
+- [release deploys list](https://docs.release.com/cli/release/deploys/list.md): Command reference doc for the Release CLI
+- [release development](https://docs.release.com/cli/release/development.md): Command reference doc for the Release CLI
+- [release development logs](https://docs.release.com/cli/release/development/logs.md): Command reference doc for the Release CLI
+- [release development start](https://docs.release.com/cli/release/development/start.md): Command reference doc for the Release CLI
+- [release environments](https://docs.release.com/cli/release/environments.md): Command reference doc for the Release CLI
+- [release environments config-get](https://docs.release.com/cli/release/environments/config-get.md): Command reference doc for the Release CLI
+- [release environments config-set](https://docs.release.com/cli/release/environments/config-set.md): Command reference doc for the Release CLI
+- [release environments create](https://docs.release.com/cli/release/environments/create.md): Command reference doc for the Release CLI
+- [release environments delete](https://docs.release.com/cli/release/environments/delete.md): Command reference doc for the Release CLI
+- [release environments get](https://docs.release.com/cli/release/environments/get.md): Command reference doc for the Release CLI
+- [release environments list](https://docs.release.com/cli/release/environments/list.md): Command reference doc for the Release CLI
+- [release environments pause](https://docs.release.com/cli/release/environments/pause.md): Command reference doc for the Release CLI
+- [release environments resume](https://docs.release.com/cli/release/environments/resume.md): Command reference doc for the Release CLI
+- [release environments vars-get](https://docs.release.com/cli/release/environments/vars-get.md): Command reference doc for the Release CLI
+- [release gitops](https://docs.release.com/cli/release/gitops.md): Command reference doc for the Release CLI
+- [release gitops init](https://docs.release.com/cli/release/gitops/init.md): Command reference doc for the Release CLI
+- [release gitops validate](https://docs.release.com/cli/release/gitops/validate.md): Command reference doc for the Release CLI
+- [release instances](https://docs.release.com/cli/release/instances.md): Command reference doc for the Release CLI
+- [release instances exec](https://docs.release.com/cli/release/instances/exec.md): Command reference doc for the Release CLI
+- [release instances logs](https://docs.release.com/cli/release/instances/logs.md): Command reference doc for the Release CLI
+- [release instances terminal](https://docs.release.com/cli/release/instances/terminal.md): Command reference doc for the Release CLI
+- [Release.ai Introduction](https://docs.release.com/release.ai/release.ai-introduction.md): Release.ai is an AI experimentation, development and deployment platform built on top of Release.com.
+- [Getting Started](https://docs.release.com/release.ai/getting-started.md)
+- [Release.ai Templates](https://docs.release.com/release.ai/release.ai-templates.md): Out-of-the box templates that get you started with Release.ai quickly
+- [Template Configuration Basics](https://docs.release.com/release.ai/release.ai-template-configuration-basics.md)
+- [Using GPU Resources](https://docs.release.com/release.ai/release.ai-gpu-resources.md)
+- [Custom Workflows](https://docs.release.com/release.ai/release.ai-custom-workflows.md)
+- [Fine Tuning LlamaX](https://docs.release.com/release.ai/release.ai-fine-tuning-llamax.md): Using Release.ai to fine tune Llama based models.
+- [Serving Inference](https://docs.release.com/release.ai/release.ai-serving-inference.md): Using Release.ai to serve inference APIs.
+
+
+---
+
+# Agent Instructions
+This documentation is published with GitBook. GitBook is the documentation platform designed so that both humans and AI agents can read, navigate, and reason over technical content effectively. Learn more at gitbook.com.
+
+## Querying This Documentation
+If you need additional information, you can query the documentation dynamically by asking a question.
+Perform an HTTP GET request on a page URL with the `ask` query parameter:
+```
+GET https://docs.release.com/readme.md?ask=<question>
+```
+The question should be specific, self-contained, and written in natural language.
+The response will contain a direct answer to the question and relevant excerpts and sources from the documentation.
+Use this mechanism when the answer is not explicitly present in the current page, you need clarification or additional context, or you want to retrieve related documentation sections.

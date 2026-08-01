@@ -1,0 +1,23 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/release-openapi-original.json
+format: custom
+envelope:
+  description: Errors return JSON with an "error" string, an optional "message", or an "errors" array
+    of strings.
+  fields:
+  - error
+  - message
+  - errors
+  example:
+    error: message
+notes: 'Release does NOT use RFC 9457 problem+json; the error envelope is a plain {"error": "..."} / {"errors":
+  [...]} JSON object (schema components.Error). Statuses below are those declared across the Platform
+  API OpenAPI responses.'
+problems:
+- status: 401
+  title: "Unauthorized \u2014 missing or invalid credentials"
+  example_source_operation: openapi/release-openapi-original.json#configs_validate
+- status: 404
+  title: Not found
+  example_source_operation: openapi/release-openapi-original.json#configs_validate

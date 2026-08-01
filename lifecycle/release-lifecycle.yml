@@ -1,0 +1,20 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.release.com/reference-documentation/release-api.md
+versioning:
+  scheme: uri-path
+  current: v1
+  base: https://api.release.com/api/v1
+  docs: https://docs.release.com/reference-documentation/release-api.md
+deprecation:
+  policy_url: https://docs.release.com/reference-documentation/release-api/environments-api.md
+  note: >-
+    The legacy Environments API is explicitly documented as "Legacy API (Deprecated)".
+    New integrations are directed to the Platform API, GraphQL API, and AI Sandbox API.
+  deprecated_surface:
+    - Legacy Environments API (environments-api)
+    - Environment Presets API (environments-api/environment-presets-api)
+status_page: https://status.release.com/
+sla:
+  note: No public SLA / uptime target document located.
+deprecated_operations: []

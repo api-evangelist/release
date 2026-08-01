@@ -1,0 +1,30 @@
+{
+  "provider": "release",
+  "sources": [
+    "release-accounts-api-openapi.yml",
+    "release-apps-api-openapi.yml",
+    "release-builds-api-openapi.yml",
+    "release-clusters-api-openapi.yml",
+    "release-configs-api-openapi.yml",
+    "release-deploys-api-openapi.yml",
+    "release-environments-api-openapi.yml",
+    "release-instances-api-openapi.yml",
+    "release-remote-development-api-openapi.yml"
+  ],
+  "outputs": [
+    "release-accounts-api-openapi.yml",
+    "release-apps-api-openapi.yml",
+    "release-builds-api-openapi.yml",
+    "release-clusters-api-openapi.yml",
+    "release-configs-api-openapi.yml",
+    "release-deploys-api-openapi.yml",
+    "release-environments-api-openapi.yml",
+    "release-instances-api-openapi.yml",
+    "release-remote-development-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

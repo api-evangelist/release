@@ -1,0 +1,408 @@
+generated: '2026-07-21'
+method: derived
+status: candidate
+source: openapi/release-openapi-original.json
+notes: No official hosted/remote MCP server is published by Release. The Agent Integration Guide (docs.release.com/reference-documentation/release-api/agent-integration-guide.md)
+  explicitly invites building MCP servers from the OpenAPI contract. Tools below are candidates derived
+  one-per-operation from the Platform API OpenAPI; auth is via X-User-Email + X-User-Token headers.
+server:
+  name: release
+  transport: http
+  auth: apiKey headers X-User-Email + X-User-Token
+  openapi: https://api.release.com/openapi.json
+tools:
+- name: configs_validate
+  description: Validate Config
+  method: POST
+  path: /configs/validate
+  source_operation: openapi/release-openapi-original.json#configs_validate
+- name: instances_show
+  description: Get Instance
+  method: GET
+  path: /instances/{identifier}
+  source_operation: openapi/release-openapi-original.json#instances_show
+- name: apps_clone
+  description: Clone app
+  method: POST
+  path: /apps/{id}/clone
+  source_operation: openapi/release-openapi-original.json#apps_clone
+- name: apps_branches_and_tags
+  description: List branches and tags
+  method: GET
+  path: /apps/{id}/branches_and_tags
+  source_operation: openapi/release-openapi-original.json#apps_branches_and_tags
+- name: builds_log
+  description: Log Build
+  method: GET
+  path: /apps/{app_id}/builds/{id}/log
+  source_operation: openapi/release-openapi-original.json#builds_log
+- name: builds_rebuild
+  description: Rebuild
+  method: POST
+  path: /apps/{app_id}/builds/{id}/rebuild
+  source_operation: openapi/release-openapi-original.json#builds_rebuild
+- name: builds_cancel
+  description: Cancel build
+  method: PUT
+  path: /apps/{app_id}/builds/{id}/cancel
+  source_operation: openapi/release-openapi-original.json#builds_cancel
+- name: builds_index
+  description: List Builds
+  method: GET
+  path: /apps/{app_id}/builds
+  source_operation: openapi/release-openapi-original.json#builds_index
+- name: builds_create
+  description: Create Build
+  method: POST
+  path: /apps/{app_id}/builds
+  source_operation: openapi/release-openapi-original.json#builds_create
+- name: builds_show
+  description: Get Build
+  method: GET
+  path: /apps/{app_id}/builds/{id}
+  source_operation: openapi/release-openapi-original.json#builds_show
+- name: serialized_configs_index
+  description: List Serialized configs
+  method: GET
+  path: /apps/{app_id}/spaces/{space_id}/serialized_configs
+  source_operation: openapi/release-openapi-original.json#serialized_configs_index
+- name: serialized_configs_create
+  description: Create Serialized config
+  method: POST
+  path: /apps/{app_id}/spaces/{space_id}/serialized_configs
+  source_operation: openapi/release-openapi-original.json#serialized_configs_create
+- name: serialized_configs_show
+  description: Get Serialized config
+  method: GET
+  path: /apps/{app_id}/spaces/{space_id}/serialized_configs/{id}
+  source_operation: openapi/release-openapi-original.json#serialized_configs_show
+- name: serialized_configs_latest_config
+  description: Get latest app config
+  method: GET
+  path: /apps/{app_id}/spaces/{space_id}/latest_config
+  source_operation: openapi/release-openapi-original.json#serialized_configs_latest_config
+- name: serialized_configs_latest_env_config
+  description: Get latest env config
+  method: GET
+  path: /apps/{app_id}/spaces/{space_id}/latest_env_config
+  source_operation: openapi/release-openapi-original.json#serialized_configs_latest_env_config
+- name: spaces_extend_expiration
+  description: Extend environment expiration
+  method: PUT
+  path: /apps/{app_id}/spaces/{id}/extend_expiration
+  source_operation: openapi/release-openapi-original.json#spaces_extend_expiration
+- name: spaces_pause
+  description: Pause environment
+  method: POST
+  path: /apps/{app_id}/spaces/{id}/pause
+  source_operation: openapi/release-openapi-original.json#spaces_pause
+- name: spaces_resume
+  description: Resume environment
+  method: POST
+  path: /apps/{app_id}/spaces/{id}/resume
+  source_operation: openapi/release-openapi-original.json#spaces_resume
+- name: spaces_override_schedule
+  description: Override environment schedule
+  method: POST
+  path: /apps/{app_id}/spaces/{id}/override_schedule
+  source_operation: openapi/release-openapi-original.json#spaces_override_schedule
+- name: pipelines_abort
+  description: Abort deploy
+  method: PUT
+  path: /apps/{app_id}/spaces/{space_id}/pipelines/{id}/abort
+  source_operation: openapi/release-openapi-original.json#pipelines_abort
+- name: pipelines_index
+  description: List Pipelines
+  method: GET
+  path: /apps/{app_id}/spaces/{space_id}/pipelines
+  source_operation: openapi/release-openapi-original.json#pipelines_index
+- name: pipelines_create
+  description: Create Pipeline
+  method: POST
+  path: /apps/{app_id}/spaces/{space_id}/pipelines
+  source_operation: openapi/release-openapi-original.json#pipelines_create
+- name: pipelines_show
+  description: Get Pipeline
+  method: GET
+  path: /apps/{app_id}/spaces/{space_id}/pipelines/{id}
+  source_operation: openapi/release-openapi-original.json#pipelines_show
+- name: instances_index
+  description: List Instances
+  method: GET
+  path: /apps/{app_id}/spaces/{space_id}/instances
+  source_operation: openapi/release-openapi-original.json#instances_index
+- name: remote_developments_kubeconfig
+  description: Download kubeconfig
+  method: GET
+  path: /apps/{app_id}/spaces/{space_id}/remote_development/kubeconfig
+  source_operation: openapi/release-openapi-original.json#remote_developments_kubeconfig
+- name: remote_developments_show
+  description: Get Remote development
+  method: GET
+  path: /apps/{app_id}/spaces/{space_id}/remote_development
+  source_operation: openapi/release-openapi-original.json#remote_developments_show
+- name: remote_developments_destroy
+  description: Delete Remote development
+  method: DELETE
+  path: /apps/{app_id}/spaces/{space_id}/remote_development
+  source_operation: openapi/release-openapi-original.json#remote_developments_destroy
+- name: remote_developments_create
+  description: Create Remote development
+  method: POST
+  path: /apps/{app_id}/spaces/{space_id}/remote_development
+  source_operation: openapi/release-openapi-original.json#remote_developments_create
+- name: spaces_index
+  description: List Spaces
+  method: GET
+  path: /apps/{app_id}/spaces
+  source_operation: openapi/release-openapi-original.json#spaces_index
+- name: spaces_create
+  description: Create Space
+  method: POST
+  path: /apps/{app_id}/spaces
+  source_operation: openapi/release-openapi-original.json#spaces_create
+- name: spaces_show
+  description: Get Space
+  method: GET
+  path: /apps/{app_id}/spaces/{id}
+  source_operation: openapi/release-openapi-original.json#spaces_show
+- name: spaces_destroy
+  description: Delete Space
+  method: DELETE
+  path: /apps/{app_id}/spaces/{id}
+  source_operation: openapi/release-openapi-original.json#spaces_destroy
+- name: apps_check_app_name
+  description: Check app name App
+  method: GET
+  path: /apps/check_app_name
+  source_operation: openapi/release-openapi-original.json#apps_check_app_name
+- name: apps_services
+  description: List app services
+  method: GET
+  path: /apps/{id}/services
+  source_operation: openapi/release-openapi-original.json#apps_services
+- name: serialized_configs_get_index
+  description: List Serialized configs
+  method: GET
+  path: /apps/{app_id}/serialized_configs
+  source_operation: openapi/release-openapi-original.json#serialized_configs_get_index
+- name: serialized_configs_post_create
+  description: Create Serialized config
+  method: POST
+  path: /apps/{app_id}/serialized_configs
+  source_operation: openapi/release-openapi-original.json#serialized_configs_post_create
+- name: serialized_configs_get_show
+  description: Get Serialized config
+  method: GET
+  path: /apps/{app_id}/serialized_configs/{id}
+  source_operation: openapi/release-openapi-original.json#serialized_configs_get_show
+- name: serialized_configs_get_latest_config
+  description: Get latest app config
+  method: GET
+  path: /apps/{app_id}/latest_config
+  source_operation: openapi/release-openapi-original.json#serialized_configs_get_latest_config
+- name: serialized_configs_get_latest_env_config
+  description: Get latest env config
+  method: GET
+  path: /apps/{app_id}/latest_env_config
+  source_operation: openapi/release-openapi-original.json#serialized_configs_get_latest_env_config
+- name: pipelines_get_index
+  description: List Pipelines
+  method: GET
+  path: /apps/{app_id}/pipelines
+  source_operation: openapi/release-openapi-original.json#pipelines_get_index
+- name: pipelines_get_show
+  description: Get Pipeline
+  method: GET
+  path: /apps/{app_id}/pipelines/{id}
+  source_operation: openapi/release-openapi-original.json#pipelines_get_show
+- name: apps_index
+  description: List Apps
+  method: GET
+  path: /apps
+  source_operation: openapi/release-openapi-original.json#apps_index
+- name: apps_create
+  description: Create App
+  method: POST
+  path: /apps
+  source_operation: openapi/release-openapi-original.json#apps_create
+- name: apps_new
+  description: New App
+  method: GET
+  path: /apps/new
+  source_operation: openapi/release-openapi-original.json#apps_new
+- name: apps_edit
+  description: Edit App
+  method: GET
+  path: /apps/{id}/edit
+  source_operation: openapi/release-openapi-original.json#apps_edit
+- name: apps_show
+  description: Get App
+  method: GET
+  path: /apps/{id}
+  source_operation: openapi/release-openapi-original.json#apps_show
+- name: apps_update
+  description: Update App
+  method: PATCH
+  path: /apps/{id}
+  source_operation: openapi/release-openapi-original.json#apps_update
+- name: apps_put_update
+  description: Update App
+  method: PUT
+  path: /apps/{id}
+  source_operation: openapi/release-openapi-original.json#apps_put_update
+- name: apps_destroy
+  description: Delete App
+  method: DELETE
+  path: /apps/{id}
+  source_operation: openapi/release-openapi-original.json#apps_destroy
+- name: settings_accounts_create_or_update
+  description: Create or update Account
+  method: POST
+  path: /accounts/{account_id}/settings
+  source_operation: openapi/release-openapi-original.json#settings_accounts_create_or_update
+- name: settings_accounts_index
+  description: List Accounts
+  method: GET
+  path: /accounts/{account_id}/settings
+  source_operation: openapi/release-openapi-original.json#settings_accounts_index
+- name: settings_accounts_delete_all
+  description: Delete all Account
+  method: DELETE
+  path: /accounts/{account_id}/settings/delete_all
+  source_operation: openapi/release-openapi-original.json#settings_accounts_delete_all
+- name: accounts_validate
+  description: Validate Account
+  method: POST
+  path: /accounts/validate
+  source_operation: openapi/release-openapi-original.json#accounts_validate
+- name: accounts_avatar
+  description: Avatar Account
+  method: POST
+  path: /accounts/{id}/avatar
+  source_operation: openapi/release-openapi-original.json#accounts_avatar
+- name: accounts_resources
+  description: Resources Account
+  method: GET
+  path: /accounts/{id}/resources
+  source_operation: openapi/release-openapi-original.json#accounts_resources
+- name: accounts_invite_users
+  description: Invite users Account
+  method: PUT
+  path: /accounts/{id}/invite_users
+  source_operation: openapi/release-openapi-original.json#accounts_invite_users
+- name: clusters_kubeconfig
+  description: Download kubeconfig
+  method: GET
+  path: /accounts/{account_id}/clusters/{id}/kubeconfig
+  source_operation: openapi/release-openapi-original.json#clusters_kubeconfig
+- name: clusters_database_snapshots
+  description: List database snapshots
+  method: GET
+  path: /accounts/{account_id}/clusters/{id}/database_snapshots
+  source_operation: openapi/release-openapi-original.json#clusters_database_snapshots
+- name: clusters_verify
+  description: Verify cluster
+  method: GET
+  path: /accounts/{account_id}/clusters/{id}/verify
+  source_operation: openapi/release-openapi-original.json#clusters_verify
+- name: clusters_certificate
+  description: Generate cluster certificate
+  method: POST
+  path: /accounts/{account_id}/clusters/{id}/certificate
+  source_operation: openapi/release-openapi-original.json#clusters_certificate
+- name: clusters_upgrade
+  description: Upgrade cluster
+  method: POST
+  path: /accounts/{account_id}/clusters/{id}/upgrade
+  source_operation: openapi/release-openapi-original.json#clusters_upgrade
+- name: clusters_patch_refresh_node_groups
+  description: Patch refresh node groups Cluster
+  method: PATCH
+  path: /accounts/{account_id}/clusters/{id}/patch_refresh_node_groups
+  source_operation: openapi/release-openapi-original.json#clusters_patch_refresh_node_groups
+- name: clusters_index
+  description: List Clusters
+  method: GET
+  path: /accounts/{account_id}/clusters
+  source_operation: openapi/release-openapi-original.json#clusters_index
+- name: clusters_create
+  description: Create Cluster
+  method: POST
+  path: /accounts/{account_id}/clusters
+  source_operation: openapi/release-openapi-original.json#clusters_create
+- name: clusters_new
+  description: New Cluster
+  method: GET
+  path: /accounts/{account_id}/clusters/new
+  source_operation: openapi/release-openapi-original.json#clusters_new
+- name: clusters_edit
+  description: Edit Cluster
+  method: GET
+  path: /accounts/{account_id}/clusters/{id}/edit
+  source_operation: openapi/release-openapi-original.json#clusters_edit
+- name: clusters_show
+  description: Get Cluster
+  method: GET
+  path: /accounts/{account_id}/clusters/{id}
+  source_operation: openapi/release-openapi-original.json#clusters_show
+- name: clusters_update
+  description: Update Cluster
+  method: PATCH
+  path: /accounts/{account_id}/clusters/{id}
+  source_operation: openapi/release-openapi-original.json#clusters_update
+- name: clusters_put_update
+  description: Update Cluster
+  method: PUT
+  path: /accounts/{account_id}/clusters/{id}
+  source_operation: openapi/release-openapi-original.json#clusters_put_update
+- name: clusters_destroy
+  description: Delete Cluster
+  method: DELETE
+  path: /accounts/{account_id}/clusters/{id}
+  source_operation: openapi/release-openapi-original.json#clusters_destroy
+- name: accounts_index
+  description: List Accounts
+  method: GET
+  path: /accounts
+  source_operation: openapi/release-openapi-original.json#accounts_index
+- name: accounts_create
+  description: Create Account
+  method: POST
+  path: /accounts
+  source_operation: openapi/release-openapi-original.json#accounts_create
+- name: accounts_new
+  description: New Account
+  method: GET
+  path: /accounts/new
+  source_operation: openapi/release-openapi-original.json#accounts_new
+- name: accounts_edit
+  description: Edit Account
+  method: GET
+  path: /accounts/{id}/edit
+  source_operation: openapi/release-openapi-original.json#accounts_edit
+- name: accounts_show
+  description: Get Account
+  method: GET
+  path: /accounts/{id}
+  source_operation: openapi/release-openapi-original.json#accounts_show
+- name: accounts_update
+  description: Update Account
+  method: PATCH
+  path: /accounts/{id}
+  source_operation: openapi/release-openapi-original.json#accounts_update
+- name: accounts_put_update
+  description: Update Account
+  method: PUT
+  path: /accounts/{id}
+  source_operation: openapi/release-openapi-original.json#accounts_put_update
+- name: accounts_destroy
+  description: Delete Account
+  method: DELETE
+  path: /accounts/{id}
+  source_operation: openapi/release-openapi-original.json#accounts_destroy
+- name: admin_accounts_index
+  description: List Accounts
+  method: GET
+  path: /
+  source_operation: openapi/release-openapi-original.json#admin_accounts_index

@@ -1,0 +1,32 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.release.com/cli/installation.md
+notes: >-
+  Release ships a first-party CLI ("release-cli") distributed via a Homebrew tap,
+  a public ECR Docker image, and platform binaries. No first-party language SDK is
+  published to npm/PyPI/Maven/NuGet/RubyGems/crates.io — Release recommends
+  generating clients from the OpenAPI contract at https://api.release.com/openapi.json
+  (openapi-generator / oapi-codegen).
+packages:
+  - language: go
+    kind: cli
+    registry: homebrew
+    name: releasehub-com/tap/release-cli
+    url: https://github.com/releasehub-com/homebrew-tap
+    install: brew install releasehub-com/tap/release-cli
+    official: true
+  - language: go
+    kind: cli
+    registry: docker
+    name: public.ecr.aws/releasehub-com/release-cli
+    url: https://gallery.ecr.aws/releasehub-com/release-cli
+    install: docker run public.ecr.aws/releasehub-com/release-cli
+    official: true
+  - language: go
+    kind: cli
+    registry: binary
+    name: release-cli
+    version: 0.39.1
+    url: https://release-cli.s3.us-west-2.amazonaws.com/v0.39.1/release_0.39.1_darwin_arm64.tar.gz
+    install: download the platform tarball and place `release` on your PATH
+    official: true

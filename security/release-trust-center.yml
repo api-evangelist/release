@@ -1,0 +1,12 @@
+generated: '2026-07-21'
+method: searched
+probe: true
+source: https://release.com/legal/security
+url: https://release.com/legal/security
+certifications:
+- SOC 2
+evidence:
+- source: https://release.com/legal/security
+  keywords:
+  - soc 2
+  - compliance certification
