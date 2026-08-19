@@ -1,0 +1,234 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Release.com Platform Accounts Apps API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-User-Email",
+      "value": "{{X-User-Email}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Apps",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Clone app",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.release.com/apps/:id/clone",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource ID (integer or hashid)"
+              }
+            ]
+          },
+          "docs": "Clone app"
+        },
+        {
+          "info": {
+            "name": "List branches and tags",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.release.com/apps/:id/branches_and_tags",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource ID (integer or hashid)"
+              }
+            ]
+          },
+          "docs": "List branches and tags"
+        },
+        {
+          "info": {
+            "name": "Check app name App",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.release.com/apps/check_app_name"
+          },
+          "docs": "Check app name App"
+        },
+        {
+          "info": {
+            "name": "List app services",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.release.com/apps/:id/services",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource ID (integer or hashid)"
+              }
+            ]
+          },
+          "docs": "List app services"
+        },
+        {
+          "info": {
+            "name": "List Apps",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.release.com/apps"
+          },
+          "docs": "List Apps"
+        },
+        {
+          "info": {
+            "name": "Create App",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.release.com/apps",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create App"
+        },
+        {
+          "info": {
+            "name": "New App",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.release.com/apps/new"
+          },
+          "docs": "New App"
+        },
+        {
+          "info": {
+            "name": "Edit App",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.release.com/apps/:id/edit",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource ID (integer or hashid)"
+              }
+            ]
+          },
+          "docs": "Edit App"
+        },
+        {
+          "info": {
+            "name": "Get App",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.release.com/apps/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource ID (integer or hashid)"
+              }
+            ]
+          },
+          "docs": "Get App"
+        },
+        {
+          "info": {
+            "name": "Update App",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.release.com/apps/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource ID (integer or hashid)"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update App"
+        },
+        {
+          "info": {
+            "name": "Update App",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.release.com/apps/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource ID (integer or hashid)"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update App"
+        },
+        {
+          "info": {
+            "name": "Delete App",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.release.com/apps/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource ID (integer or hashid)"
+              }
+            ]
+          },
+          "docs": "Delete App"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

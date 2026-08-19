@@ -1,0 +1,230 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Release.com Platform Accounts Environments API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-User-Email",
+      "value": "{{X-User-Email}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Environments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Extend environment expiration",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.release.com/apps/:app_id/spaces/:id/extend_expiration",
+            "params": [
+              {
+                "name": "app_id",
+                "value": "",
+                "type": "path",
+                "description": "App ID (integer or hashid)"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource ID (integer or hashid)"
+              }
+            ]
+          },
+          "docs": "Extend environment expiration"
+        },
+        {
+          "info": {
+            "name": "Pause environment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.release.com/apps/:app_id/spaces/:id/pause",
+            "params": [
+              {
+                "name": "app_id",
+                "value": "",
+                "type": "path",
+                "description": "App ID (integer or hashid)"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource ID (integer or hashid)"
+              }
+            ]
+          },
+          "docs": "Pause environment"
+        },
+        {
+          "info": {
+            "name": "Resume environment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.release.com/apps/:app_id/spaces/:id/resume",
+            "params": [
+              {
+                "name": "app_id",
+                "value": "",
+                "type": "path",
+                "description": "App ID (integer or hashid)"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource ID (integer or hashid)"
+              }
+            ]
+          },
+          "docs": "Resume environment"
+        },
+        {
+          "info": {
+            "name": "Override environment schedule",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.release.com/apps/:app_id/spaces/:id/override_schedule",
+            "params": [
+              {
+                "name": "app_id",
+                "value": "",
+                "type": "path",
+                "description": "App ID (integer or hashid)"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource ID (integer or hashid)"
+              }
+            ]
+          },
+          "docs": "Override environment schedule"
+        },
+        {
+          "info": {
+            "name": "List Spaces",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.release.com/apps/:app_id/spaces",
+            "params": [
+              {
+                "name": "app_id",
+                "value": "",
+                "type": "path",
+                "description": "App ID (integer or hashid)"
+              },
+              {
+                "name": "sort_key",
+                "value": "",
+                "type": "query",
+                "description": "Sort field"
+              },
+              {
+                "name": "sort_order",
+                "value": "",
+                "type": "query",
+                "description": "Sort direction"
+              }
+            ]
+          },
+          "docs": "List Spaces"
+        },
+        {
+          "info": {
+            "name": "Create Space",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.release.com/apps/:app_id/spaces",
+            "params": [
+              {
+                "name": "app_id",
+                "value": "",
+                "type": "path",
+                "description": "App ID (integer or hashid)"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create Space"
+        },
+        {
+          "info": {
+            "name": "Get Space",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.release.com/apps/:app_id/spaces/:id",
+            "params": [
+              {
+                "name": "app_id",
+                "value": "",
+                "type": "path",
+                "description": "App ID (integer or hashid)"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource ID (integer or hashid)"
+              }
+            ]
+          },
+          "docs": "Get Space"
+        },
+        {
+          "info": {
+            "name": "Delete Space",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.release.com/apps/:app_id/spaces/:id",
+            "params": [
+              {
+                "name": "app_id",
+                "value": "",
+                "type": "path",
+                "description": "App ID (integer or hashid)"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource ID (integer or hashid)"
+              }
+            ]
+          },
+          "docs": "Delete Space"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

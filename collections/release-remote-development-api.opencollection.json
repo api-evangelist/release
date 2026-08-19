@@ -1,0 +1,130 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Release.com Platform Accounts Remote Development API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-User-Email",
+      "value": "{{X-User-Email}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Remote Development",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Download kubeconfig",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.release.com/apps/:app_id/spaces/:space_id/remote_development/kubeconfig",
+            "params": [
+              {
+                "name": "app_id",
+                "value": "",
+                "type": "path",
+                "description": "App ID (integer or hashid)"
+              },
+              {
+                "name": "space_id",
+                "value": "",
+                "type": "path",
+                "description": "Environment ID (integer or hashid)"
+              }
+            ]
+          },
+          "docs": "Download kubeconfig"
+        },
+        {
+          "info": {
+            "name": "Get Remote development",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.release.com/apps/:app_id/spaces/:space_id/remote_development",
+            "params": [
+              {
+                "name": "app_id",
+                "value": "",
+                "type": "path",
+                "description": "App ID (integer or hashid)"
+              },
+              {
+                "name": "space_id",
+                "value": "",
+                "type": "path",
+                "description": "Environment ID (integer or hashid)"
+              }
+            ]
+          },
+          "docs": "Get Remote development"
+        },
+        {
+          "info": {
+            "name": "Create Remote development",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.release.com/apps/:app_id/spaces/:space_id/remote_development",
+            "params": [
+              {
+                "name": "app_id",
+                "value": "",
+                "type": "path",
+                "description": "App ID (integer or hashid)"
+              },
+              {
+                "name": "space_id",
+                "value": "",
+                "type": "path",
+                "description": "Environment ID (integer or hashid)"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create Remote development"
+        },
+        {
+          "info": {
+            "name": "Delete Remote development",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.release.com/apps/:app_id/spaces/:space_id/remote_development",
+            "params": [
+              {
+                "name": "app_id",
+                "value": "",
+                "type": "path",
+                "description": "App ID (integer or hashid)"
+              },
+              {
+                "name": "space_id",
+                "value": "",
+                "type": "path",
+                "description": "Environment ID (integer or hashid)"
+              }
+            ]
+          },
+          "docs": "Delete Remote development"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

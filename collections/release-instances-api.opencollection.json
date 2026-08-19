@@ -1,0 +1,70 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Release.com Platform Accounts Instances API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-User-Email",
+      "value": "{{X-User-Email}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Instances",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.release.com/instances/:identifier",
+            "params": [
+              {
+                "name": "identifier",
+                "value": "",
+                "type": "path",
+                "description": "Identifier"
+              }
+            ]
+          },
+          "docs": "Get Instance"
+        },
+        {
+          "info": {
+            "name": "List Instances",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.release.com/apps/:app_id/spaces/:space_id/instances",
+            "params": [
+              {
+                "name": "app_id",
+                "value": "",
+                "type": "path",
+                "description": "App ID (integer or hashid)"
+              },
+              {
+                "name": "space_id",
+                "value": "",
+                "type": "path",
+                "description": "Environment ID (integer or hashid)"
+              }
+            ]
+          },
+          "docs": "List Instances"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

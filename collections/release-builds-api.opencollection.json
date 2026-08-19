@@ -1,0 +1,192 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Release.com Platform Accounts Builds API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-User-Email",
+      "value": "{{X-User-Email}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Builds",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Log Build",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.release.com/apps/:app_id/builds/:id/log",
+            "params": [
+              {
+                "name": "app_id",
+                "value": "",
+                "type": "path",
+                "description": "App ID (integer or hashid)"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource ID (integer or hashid)"
+              }
+            ]
+          },
+          "docs": "Log Build"
+        },
+        {
+          "info": {
+            "name": "Rebuild",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.release.com/apps/:app_id/builds/:id/rebuild",
+            "params": [
+              {
+                "name": "app_id",
+                "value": "",
+                "type": "path",
+                "description": "App ID (integer or hashid)"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource ID (integer or hashid)"
+              }
+            ]
+          },
+          "docs": "Rebuild"
+        },
+        {
+          "info": {
+            "name": "Cancel build",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.release.com/apps/:app_id/builds/:id/cancel",
+            "params": [
+              {
+                "name": "app_id",
+                "value": "",
+                "type": "path",
+                "description": "App ID (integer or hashid)"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource ID (integer or hashid)"
+              }
+            ]
+          },
+          "docs": "Cancel build"
+        },
+        {
+          "info": {
+            "name": "List Builds",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.release.com/apps/:app_id/builds",
+            "params": [
+              {
+                "name": "app_id",
+                "value": "",
+                "type": "path",
+                "description": "App ID (integer or hashid)"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number"
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Items per page"
+              },
+              {
+                "name": "branch",
+                "value": "",
+                "type": "query",
+                "description": "Filter by branch"
+              },
+              {
+                "name": "tag",
+                "value": "",
+                "type": "query",
+                "description": "Filter by tag"
+              }
+            ]
+          },
+          "docs": "List Builds"
+        },
+        {
+          "info": {
+            "name": "Create Build",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.release.com/apps/:app_id/builds",
+            "params": [
+              {
+                "name": "app_id",
+                "value": "",
+                "type": "path",
+                "description": "App ID (integer or hashid)"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create Build"
+        },
+        {
+          "info": {
+            "name": "Get Build",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.release.com/apps/:app_id/builds/:id",
+            "params": [
+              {
+                "name": "app_id",
+                "value": "",
+                "type": "path",
+                "description": "App ID (integer or hashid)"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource ID (integer or hashid)"
+              }
+            ]
+          },
+          "docs": "Get Build"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

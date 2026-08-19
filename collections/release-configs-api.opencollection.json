@@ -1,0 +1,277 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Release.com Platform Accounts Configs API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-User-Email",
+      "value": "{{X-User-Email}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Configs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Validate Config",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.release.com/configs/validate"
+          },
+          "docs": "Validate Config"
+        },
+        {
+          "info": {
+            "name": "List Serialized configs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.release.com/apps/:app_id/spaces/:space_id/serialized_configs",
+            "params": [
+              {
+                "name": "app_id",
+                "value": "",
+                "type": "path",
+                "description": "App ID (integer or hashid)"
+              },
+              {
+                "name": "space_id",
+                "value": "",
+                "type": "path",
+                "description": "Environment ID (integer or hashid)"
+              }
+            ]
+          },
+          "docs": "List Serialized configs"
+        },
+        {
+          "info": {
+            "name": "Create Serialized config",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.release.com/apps/:app_id/spaces/:space_id/serialized_configs",
+            "params": [
+              {
+                "name": "app_id",
+                "value": "",
+                "type": "path",
+                "description": "App ID (integer or hashid)"
+              },
+              {
+                "name": "space_id",
+                "value": "",
+                "type": "path",
+                "description": "Environment ID (integer or hashid)"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create Serialized config"
+        },
+        {
+          "info": {
+            "name": "Get Serialized config",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.release.com/apps/:app_id/spaces/:space_id/serialized_configs/:id",
+            "params": [
+              {
+                "name": "app_id",
+                "value": "",
+                "type": "path",
+                "description": "App ID (integer or hashid)"
+              },
+              {
+                "name": "space_id",
+                "value": "",
+                "type": "path",
+                "description": "Environment ID (integer or hashid)"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource ID (integer or hashid)"
+              }
+            ]
+          },
+          "docs": "Get Serialized config"
+        },
+        {
+          "info": {
+            "name": "Get latest app config",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.release.com/apps/:app_id/spaces/:space_id/latest_config",
+            "params": [
+              {
+                "name": "app_id",
+                "value": "",
+                "type": "path",
+                "description": "App ID (integer or hashid)"
+              },
+              {
+                "name": "space_id",
+                "value": "",
+                "type": "path",
+                "description": "Environment ID (integer or hashid)"
+              }
+            ]
+          },
+          "docs": "Get latest app config"
+        },
+        {
+          "info": {
+            "name": "Get latest env config",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.release.com/apps/:app_id/spaces/:space_id/latest_env_config",
+            "params": [
+              {
+                "name": "app_id",
+                "value": "",
+                "type": "path",
+                "description": "App ID (integer or hashid)"
+              },
+              {
+                "name": "space_id",
+                "value": "",
+                "type": "path",
+                "description": "Environment ID (integer or hashid)"
+              }
+            ]
+          },
+          "docs": "Get latest env config"
+        },
+        {
+          "info": {
+            "name": "List Serialized configs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.release.com/apps/:app_id/serialized_configs",
+            "params": [
+              {
+                "name": "app_id",
+                "value": "",
+                "type": "path",
+                "description": "App ID (integer or hashid)"
+              }
+            ]
+          },
+          "docs": "List Serialized configs"
+        },
+        {
+          "info": {
+            "name": "Create Serialized config",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.release.com/apps/:app_id/serialized_configs",
+            "params": [
+              {
+                "name": "app_id",
+                "value": "",
+                "type": "path",
+                "description": "App ID (integer or hashid)"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create Serialized config"
+        },
+        {
+          "info": {
+            "name": "Get Serialized config",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.release.com/apps/:app_id/serialized_configs/:id",
+            "params": [
+              {
+                "name": "app_id",
+                "value": "",
+                "type": "path",
+                "description": "App ID (integer or hashid)"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Resource ID (integer or hashid)"
+              }
+            ]
+          },
+          "docs": "Get Serialized config"
+        },
+        {
+          "info": {
+            "name": "Get latest app config",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.release.com/apps/:app_id/latest_config",
+            "params": [
+              {
+                "name": "app_id",
+                "value": "",
+                "type": "path",
+                "description": "App ID (integer or hashid)"
+              }
+            ]
+          },
+          "docs": "Get latest app config"
+        },
+        {
+          "info": {
+            "name": "Get latest env config",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.release.com/apps/:app_id/latest_env_config",
+            "params": [
+              {
+                "name": "app_id",
+                "value": "",
+                "type": "path",
+                "description": "App ID (integer or hashid)"
+              }
+            ]
+          },
+          "docs": "Get latest env config"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

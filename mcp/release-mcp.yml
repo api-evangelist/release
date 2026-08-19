@@ -406,3 +406,9 @@ tools:
   method: GET
   path: /
   source_operation: openapi/release-openapi-original.json#admin_accounts_index
+deployment:
+  mode: none
+  verified: derived
+  tools: 79
+  checked: '2026-08-12'
+  source: catalog MCP census
