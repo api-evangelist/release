@@ -48,6 +48,8 @@ apis:
   humanURL: https://docs.release.com/reference-documentation/release-api.md
   baseURL: https://api.release.com
   tags:
+  - Account
+  tags_raw:
   - Accounts
   properties:
   - type: OpenAPI
@@ -64,6 +66,8 @@ apis:
   humanURL: https://docs.release.com/reference-documentation/release-api.md
   baseURL: https://api.release.com
   tags:
+  - Application
+  tags_raw:
   - Apps
   properties:
   - type: OpenAPI
@@ -96,6 +100,8 @@ apis:
   humanURL: https://docs.release.com/reference-documentation/release-api.md
   baseURL: https://api.release.com
   tags:
+  - Cluster
+  tags_raw:
   - Clusters
   properties:
   - type: OpenAPI
