@@ -163,6 +163,8 @@ apis:
   humanURL: https://docs.release.com/reference-documentation/release-api.md
   baseURL: https://api.release.com
   tags:
+  - Environment
+  tags_raw:
   - Environments
   properties:
   - type: OpenAPI
