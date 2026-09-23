@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Release.com Platform Accounts Instances API
+  title: Release.com Platform Instances API
   version: 1.0.0
   description: 'The Release.com Platform API provides REST endpoints for managing
 
@@ -11,9 +11,7 @@ info:
 
     **V1 scope:** Platform endpoints only. AI sandbox endpoints (`/ai/**`)
 
-    are excluded from this version and will be added in a future iteration.
-
-    '
+    are excluded from this version and will be added in a future iteration.'
   contact:
     name: Release.com
     url: https://release.com
