@@ -249,6 +249,21 @@ paths:
         description: Resource ID (integer or hashid)
 components:
   schemas:
+    BuildIndex:
+      type: object
+      properties:
+        total_count:
+          type: integer
+        current_page:
+          type: integer
+        per_page:
+          type: integer
+        total_pages:
+          type: integer
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Build'
     Build:
       type: object
       properties:
@@ -291,21 +306,6 @@ components:
           type: array
           items:
             type: string
-    BuildIndex:
-      type: object
-      properties:
-        total_count:
-          type: integer
-        current_page:
-          type: integer
-        per_page:
-          type: integer
-        total_pages:
-          type: integer
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/Build'
   securitySchemes:
     userEmail:
       type: apiKey

@@ -460,6 +460,17 @@ paths:
       parameters: []
 components:
   schemas:
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+        message:
+          type: string
+        errors:
+          type: array
+          items:
+            type: string
     Account:
       type: object
       properties:
@@ -513,17 +524,6 @@ components:
           type: string
         flags:
           type: string
-    Error:
-      type: object
-      properties:
-        error:
-          type: string
-        message:
-          type: string
-        errors:
-          type: array
-          items:
-            type: string
   securitySchemes:
     userEmail:
       type: apiKey
