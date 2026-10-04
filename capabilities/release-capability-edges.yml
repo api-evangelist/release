@@ -1,0 +1,75 @@
+slug: release
+provider: Release
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 6
+edges:
+- tag: Environments
+  spec_file: release-environments-api-openapi.yml
+  capability_id: BC-4210.20
+  capability_id_l1: BC-4210
+  capability_name: Environment Management
+  confidence: 0.9
+  evidence: PUT /apps/{app_id}/spaces/{id}/extend_expiration  Extend environment expiration; POST .../pause  Pause
+    environment
+  reason: Spaces are the ephemeral non-production environments; creating, pausing, resuming and expiring
+    them is environment management.
+- tag: Builds
+  spec_file: release-builds-api-openapi.yml
+  capability_id: BC-4210.10
+  capability_id_l1: BC-4210
+  capability_name: Continuous Integration Management
+  confidence: 0.85
+  evidence: POST /apps/{app_id}/builds  builds_create  Create Build; POST /apps/{app_id}/builds/{id}/rebuild  Rebuild;
+    GET /apps/{app_id}/builds/{id}/log  Log Build
+  reason: Creating, rebuilding, cancelling and inspecting build logs is continuous integration / build
+    pipeline management for software.
+- tag: Deploys
+  spec_file: release-deploys-api-openapi.yml
+  capability_id: BC-4210.40
+  capability_id_l1: BC-4210
+  capability_name: Deployment Orchestration
+  confidence: 0.85
+  evidence: PUT /apps/{app_id}/spaces/{space_id}/pipelines/{id}/abort  pipelines_abort  Abort deploy
+  reason: Deploy pipelines created, inspected and aborted against an environment is deployment orchestration
+    of software changes.
+- tag: Clusters
+  spec_file: release-clusters-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.8
+  evidence: GET /accounts/{account_id}/clusters/{id}/kubeconfig  Download kubeconfig; POST /accounts/{account_id}/clusters/{id}/upgrade  Upgrade
+    cluster; patch_refresh_node_groups
+  reason: Provisioning, verifying and upgrading Kubernetes clusters and node groups is cloud/compute infrastructure
+    management.
+- tag: Configs
+  spec_file: release-configs-api-openapi.yml
+  capability_id: BC-4210.60
+  capability_id_l1: BC-4210
+  capability_name: Configuration & Secrets Management
+  confidence: 0.75
+  evidence: GET /apps/{app_id}/latest_env_config  Get latest env config; POST /configs/validate  Validate
+    Config
+  reason: Serialized app and environment configuration versions validated and retrieved per environment
+    corresponds to runtime configuration management; no secrets evidence, so moderate confidence.
+- tag: Remote Development
+  spec_file: release-remote-development-api-openapi.yml
+  capability_id: BC-4210.20
+  capability_id_l1: BC-4210
+  capability_name: Environment Management
+  confidence: 0.7
+  evidence: POST /apps/{app_id}/spaces/{space_id}/remote_development  Create Remote development; GET .../remote_development/kubeconfig  Download
+    kubeconfig
+  reason: Creating and tearing down a remote development session inside an environment space is stewardship
+    of non-production development environments; alternative reading as engineering productivity tooling
+    keeps confidence moderate.
