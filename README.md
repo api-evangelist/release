@@ -64,6 +64,139 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Release is a company surfaced as a portfolio company of crv and added to the API Evangelist network as a stub for enrichment. Sector: developer-tools. This profile is a lead awaiting the enrichment pipeline.
+Release is a developer-tools platform that provisions on-demand, full-stack ephemeral environments inside your own AWS or GCP cloud accounts. Positioned as a Heroku replacement and a Vercel alternative for full-stack apps, Release turns a repository plus a .release.yaml (or Docker Compose) file into reproducible environments spun up per pull request, per branch, or on demand, with managed Kubernetes clusters, datasets, remote development, and a Release.ai AI sandbox. Teams automate it through a REST Platform API (accounts, apps, environments, deploys, clusters, builds), a GraphQL API, an AI Sandbox API, and a first-party CLI, all authenticated with X-User-Email and X-User-Token headers and described by a canonical OpenAPI contract at https://api.release.com/openapi.json.
 
-Backed by: crv — https://release.com/
+**Areas:** Company · Developer Tools · Ephemeral Environments · Platform Engineering · Deployment · Kubernetes · Environments as a Service · DevOps · CI/CD · AI Sandbox
+
+## Release on APIs.io
+
+Everything profiled for Release is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/release/](https://apis.io/providers/release/)** — or go straight to one of the APIs or properties below.
+
+### APIs (9)
+
+- [Release Accounts API](https://apis.io/apis/release/release-accounts-api/) — The Accounts API from Release — 11 operation(s) for accounts.
+- [Release Apps API](https://apis.io/apis/release/release-apps-api/) — The Apps API from Release — 8 operation(s) for apps.
+- [Release Builds API](https://apis.io/apis/release/release-builds-api/) — The Builds API from Release — 5 operation(s) for builds.
+- [Release Clusters API](https://apis.io/apis/release/release-clusters-api/) — The Clusters API from Release — 10 operation(s) for clusters.
+- [Release Configs API](https://apis.io/apis/release/release-configs-api/) — The Configs API from Release — 9 operation(s) for configs.
+- [Release Deploys API](https://apis.io/apis/release/release-deploys-api/) — The Deploys API from Release — 5 operation(s) for deploys.
+- [Release Environments API](https://apis.io/apis/release/release-environments-api/) — The Environments API from Release — 6 operation(s) for environments.
+- [Release Instances API](https://apis.io/apis/release/release-instances-api/) — The Instances API from Release — 2 operation(s) for instances.
+- [Release Remote Development API](https://apis.io/apis/release/release-remote-development-api/) — The Remote Development API from Release — 2 operation(s) for remote development.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [release](https://apis.io/servers/release/release/)
+
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Release Agentic Access](https://apis.io/agentic-access/release/release-agentic-access/)
+
+#### Collections (9)
+
+Postman and Open Collection request collections.
+
+- [Release.com Platform Accounts API](https://apis.io/collections/release/open-release-accounts-api/)
+- [Release.com Platform Accounts Apps API](https://apis.io/collections/release/open-release-apps-api/)
+- [Release.com Platform Accounts Builds API](https://apis.io/collections/release/open-release-builds-api/)
+- [Release.com Platform Accounts Clusters API](https://apis.io/collections/release/open-release-clusters-api/)
+- [Release.com Platform Accounts Configs API](https://apis.io/collections/release/open-release-configs-api/)
+- [Release.com Platform Accounts Deploys API](https://apis.io/collections/release/open-release-deploys-api/)
+- [Release.com Platform Accounts Environments API](https://apis.io/collections/release/open-release-environments-api/)
+- [Release.com Platform Accounts Instances API](https://apis.io/collections/release/open-release-instances-api/)
+- [Release.com Platform Accounts Remote Development API](https://apis.io/collections/release/open-release-remote-development-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Release Openapi Overlay](https://apis.io/overlays/release/release-openapi-overlay/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Release Authentication](https://apis.io/security/release/release-authentication/)
+- [Release Domain Security](https://apis.io/security/release/release-domain-security/)
+- [Release Trust Center](https://apis.io/security/release/release-trust-center/)
+- [Release Vulnerability Disclosure](https://apis.io/security/release/release-vulnerability-disclosure/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://release.com/)
+- [Documentation](https://docs.release.com/)
+- [Getting started](https://docs.release.com/getting-started/quickstart.md)
+- [API reference](https://docs.release.com/reference-documentation/release-api.md)
+- [Pricing](https://release.com/pricing)
+- [Blog](https://release.com/blog)
+- [Security](https://release.com/legal/security)
+- [Compliance](https://release.com/legal/security)
+- [Terms of service](https://release.com/legal/terms-of-service)
+- [Privacy policy](https://release.com/legal/privacy-policy)
+- [GitHub](https://github.com/releasehub-com)
+- [Status](https://status.release.com/)
+
+## API Evangelist rating
+
+**Kin Score 52.6** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 49.9 |
+| Contract governance | 4.5 |
+| Operational transparency | 28.9 |
+| Developer ergonomics | 66.1 |
+| Access clarity | 53.9 |
+
+**Agent readiness 24.3** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | verified |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | — |
+| Operation Distinctiveness | — |
+
+**Regulatory alignment 35.3** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/release/](https://apis.io/providers/release/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Release: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/release/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
